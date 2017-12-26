@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input type="number" matInput placeholder="Input A" [(ngModel)]="inputA">
+</mat-form-field>
+<mat-form-field>
+  <input type="number" matInput placeholder="Input B" [(ngModel)]="inputB">
+</mat-form-field>
+<button mat-button class="mat-accent" (click)="calculate()">Calculate</button>
+<div class="answer">Answer: {{ answer }}</div>
+<div class="answer">Finshed: {{ finished }}</div>
+

@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import './app/shared/nav/nav.component.scss';
+@import './styles-main.scss';
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-orange);
+$app-accent:  mat-palette($mat-blue, A200, A100, A400);
+$app-warn:    mat-palette($mat-red);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@mixin custom-theme($theme) {    
+    @include nav-theme($theme);
+    @include styles-main($theme);
+}
+
+@include custom-theme($app-theme);
+@include angular-material-theme($app-theme);
+
+
+
+
+

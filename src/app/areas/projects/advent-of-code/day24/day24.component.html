@@ -1,0 +1,9 @@
+<mat-form-field>
+  <textarea matInput placeholder="Input string" [(ngModel)]="inputString"></textarea>
+</mat-form-field>
+<button mat-button class="mat-accent" (click)="calculate()">Calculate</button>
+<div class="answer">Answer: {{ answer }}</div>
+<div class="answer">Total bridges: {{ totalBridges }}</div>
+<div class="answer">Bridges completed: {{ bridgesCompleted }}</div>
+<div class="answer">Bridges remaining: {{ bridgesRemaining }}</div>
+

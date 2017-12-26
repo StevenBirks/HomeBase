@@ -1,0 +1,36 @@
+@mixin styles-main($inTheme) {
+    $primary: map-get($inTheme, primary);
+    $accent: map-get($inTheme, accent); 
+
+    body {
+        margin: 0px;
+        font-family: Sans-serif;
+        overflow: hidden;
+    
+        .with-background-image {
+            width: calc(100vw);
+            height: calc(100vh - 2rem);
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center;
+            background-color:white;
+            opacity: 0.8;
+        
+            .title {
+                margin: 0;
+            }
+        }
+    
+        h1 {
+            color: mat-color($primary);
+        }
+
+        .answer {
+            color: mat-color($primary);
+        }
+    }
+    
+    .mat-tab-body-content {
+        height: calc(100vh - 5rem) !important;
+      }
+}
