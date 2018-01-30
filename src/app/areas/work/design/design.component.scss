@@ -1,0 +1,16 @@
+.design-container {
+    height: calc(100vh - 5rem);
+    background-image:  url('../../../../assets/design-large.png');
+    background-position: bottom 1rem right 1rem;
+    background-size: 150px;
+    margin: 0;
+}
+
+.spinner-container {
+    position: fixed;
+    left: 45%;
+}
+
+.mat-table {
+    margin-bottom: 1rem;
+}
