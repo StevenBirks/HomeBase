@@ -72,8 +72,6 @@ export class Day9_2015Component implements OnInit {
       this._routes.push(newRoute);
     })
 
-    debugger;
-
     for (let i = 0; i < 7; i++) {
       this._routes.filter((route) => {
         return route.current;
