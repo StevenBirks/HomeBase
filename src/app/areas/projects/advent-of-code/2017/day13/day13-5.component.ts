@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-day13-5',
-  templateUrl: './day13-5.component.html'
+  templateUrl: './day13-5.component.html',
+  styleUrls: ['./day13-5.component.scss']
 })
 export class Day13_5Component implements OnInit {
 
   constructor() { }
   public inputString: string;
-  public inputDelay: number;
   public answer: string;
 
   private _firewalls: iFirewall[];
@@ -16,6 +16,10 @@ export class Day13_5Component implements OnInit {
   private _detected: boolean
   private _passed: boolean;
   private _iteration: number;
+  private _delay: number;
+
+  // for styles
+  private _maxFirewallRange: number;
   
   ngOnInit() {
   }
@@ -37,26 +41,19 @@ export class Day13_5Component implements OnInit {
 
       this._firewalls.push(newFirewall);
     }
+    
+    const max = this._firewalls.reduce((prev, current) => {
+       return (prev.range > current.range) ? prev : current
+    })
+
+    this._maxFirewallRange = max.range;
 
     this._passed = false;
+    this._delay = 0;
 
-    let delay = this.inputDelay;
-
-    this._reset();   
-    while (!this._passed) {
-      const thing = this._firewalls.find((firewall) => {
-        return (delay + firewall.depth) % (2*(firewall.range-1)) === 0;
-      });
-      if (thing === undefined) {
-        console.log("attempting delay: ", delay);     
-        this._runWithDelay(delay);
-        this.answer = delay.toString();
-      } else {
-        delay +=2;
-      }
-    }
-
-    this.answer = `Delay: ${delay} , Pass!`;
+    this._reset(); 
+    
+    this._run();
   } 
 
   private _moveScanners() : void {
@@ -85,10 +82,11 @@ export class Day13_5Component implements OnInit {
     })
   }
 
-  private _runWithDelay(delay: number): void {
-    for (let i = 0; i < delay; i++) {
+  private _run(): void {
+    for (let i = 0; i < this._delay; i++) {
       this._moveScanners();
     }
+
     while (this._currentDepth < this._firewalls[this._firewalls.length-1].depth && !this._detected) {
       let firewall = this._firewalls.filter(firewall => {
         return firewall.depth == this._currentDepth;
@@ -97,7 +95,7 @@ export class Day13_5Component implements OnInit {
       if (firewall.length === 1) {      
         if (firewall[0].scannerPosition === 0) {
           this._detected = true;
-          console.log(`Delay: ${delay},  Detected depth: ${firewall[0].depth}`);
+          console.log(`Delay: ${this._delay},  Detected depth: ${firewall[0].depth}`);
         }
       } 
       
@@ -109,6 +107,14 @@ export class Day13_5Component implements OnInit {
 
     if (this._currentDepth === this._firewalls[this._firewalls.length-1].depth) {
       this._passed = true;
+      this.answer = this._delay.toString();
+    } else {
+      setTimeout(() => {
+        this.answer = this._delay.toString();
+        this._delay +=2;
+        this._reset(); 
+        this._run();
+      },2)
     }
   }
 }

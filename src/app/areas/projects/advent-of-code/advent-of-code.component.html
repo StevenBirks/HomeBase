@@ -1,4 +1,16 @@
 <div class="advent-of-code-container">
-  <h1>The Advent of Code</h1>
-  <app-day-block></app-day-block>
+  <a href="https://adventofcode.com" class="link-with-title" target="_blank">
+    <h1 class="p-4 mb-0">The Advent of Code</h1>
+  </a>
+  <mat-tab-group class="sub-tab-group">
+    <mat-tab label="2015">
+      <app-day-block-2015></app-day-block-2015>
+    </mat-tab>
+    <mat-tab label="2016">
+      <app-day-block-2016></app-day-block-2016>
+    </mat-tab>
+    <mat-tab label="2017">
+        <app-day-block-2017></app-day-block-2017>
+      </mat-tab>
+  </mat-tab-group>
 </div>

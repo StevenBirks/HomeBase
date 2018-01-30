@@ -1,6 +1,8 @@
 @import '~@angular/material/theming';
-@import './app/shared/nav/nav.component.scss';
 @import './styles-main.scss';
+@import './app/shared/nav/nav.component.scss';
+@import './app/areas/projects/advent-of-code/2017/day13/day13-5.component.scss';
+
 
 @include mat-core();
 
@@ -13,6 +15,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @mixin custom-theme($theme) {    
     @include nav-theme($theme);
     @include styles-main($theme);
+    @include day13-5-theme($theme);
 }
 
 @include custom-theme($app-theme);

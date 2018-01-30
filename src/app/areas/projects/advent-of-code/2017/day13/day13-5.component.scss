@@ -1,0 +1,13 @@
+@mixin day13-5-theme($inTheme) {
+    $primary: map-get($inTheme, primary);
+    $accent: map-get($inTheme, accent); 
+    
+    .firewalls-container {
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+
+        .firewall {
+        }
+    }
+}

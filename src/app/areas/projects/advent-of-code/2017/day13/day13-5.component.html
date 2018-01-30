@@ -1,0 +1,13 @@
+<mat-form-field>
+  <textarea matInput placeholder="Input string" [(ngModel)]="inputString"></textarea>
+</mat-form-field>
+<button mat-button class="mat-accent" (click)="calculate()">Calculate</button>
+<div class="display-container">
+  <div class="firewalls-container">
+    <div *ngFor="let firewall of _firewalls" class="firewall"
+     [style.height.%]="100 * firewall.range / _maxFirewallRange"
+     [style.width.%]="100 / _firewalls.length"
+     [style.background-color]="_currentDepth === firewall.depth ? 'yellow' : 'blue'"></div>
+  </div>
+</div>
+<div class="answer">Answer: {{ answer }}</div>

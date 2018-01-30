@@ -1,0 +1,141 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-2015-day6-5',
+  templateUrl: './day6-5.component.html'
+})
+export class Day6_5_2015Component implements OnInit {
+
+  constructor() { }
+  public inputString: string;
+  public answer: number;
+
+  private _instructions: iInstruction[];
+  private _grid: number[][];
+
+  ngOnInit() {
+  }
+
+  public calculate(): void {
+    var inputRows = this.inputString.split("\n");
+    this.answer = 0;
+
+    this._instructions = new Array<iInstruction>();
+
+    for (const row of inputRows) {
+      let coordinates = this._getCoordinates(row);
+      let newInstruction = <iInstruction>{
+        type: this._getCommandType(row),
+        start: coordinates[0],
+        end: coordinates[1]
+      };
+
+      this._instructions.push(newInstruction);
+    }
+
+    this._grid = new Array<Array<number>>();
+
+    for (let i = 0; i < 1000; i++) {
+      let gridLine = new Array<number>();
+
+      for (let j = 0; j < 1000; j++) {
+        gridLine.push(0);
+      }
+
+      this._grid.push(gridLine);
+    }
+
+    this._instructions.forEach((instruction) => {
+      for (let y = instruction.start.y; y <= instruction.end.y; y++) {  
+        for (let x = instruction.start.x; x <= instruction.end.x; x++) {
+          this._grid[y][x] += this._performInstruction(instruction, x, y);
+          this._grid[y][x] < 0 ? this._grid[y][x] = 0 : null;
+        }  
+      }
+    });
+
+    this.answer = this._getAnswer();
+
+  }
+
+  private _getCoordinates(row: string): iCoordinate[] {
+    let splitRow = row.split(" ");
+
+    let coordinates = new Array<iCoordinate>();
+
+    if (splitRow.length === 4) {
+      coordinates.push(<iCoordinate> {
+        x: Number.parseInt(splitRow[1].split(",")[0]),
+        y: Number.parseInt(splitRow[1].split(",")[1])
+      });
+      coordinates.push(<iCoordinate> {
+        x: Number.parseInt(splitRow[3].split(",")[0]),
+        y: Number.parseInt(splitRow[3].split(",")[1])
+      });
+    } else {
+      coordinates.push(<iCoordinate> {
+        x: Number.parseInt(splitRow[2].split(",")[0]),
+        y: Number.parseInt(splitRow[2].split(",")[1])
+      });
+      coordinates.push(<iCoordinate> {
+        x: Number.parseInt(splitRow[4].split(",")[0]),
+        y: Number.parseInt(splitRow[4].split(",")[1])
+      });
+    }
+
+    return coordinates;
+  }
+
+  private _getCommandType(row: string): SwitchType {
+    let splitRow = row.split(" ");
+
+    if (splitRow.length === 4) {
+      return SwitchType.toggle;
+    } else {
+      if (splitRow[1] === "on") {
+        return SwitchType.turnOn;
+      } else {
+        return SwitchType.turnOff;
+      }
+    }
+  }
+
+  private _performInstruction(instruction: iInstruction, x: number, y: number): number {
+    if (instruction.type === SwitchType.turnOn) {
+      return 1;
+    } else if (instruction.type === SwitchType.turnOff) {
+      return -1;
+    } else {
+        return 2;
+    }
+  }
+
+  private _getAnswer(): number {
+    let answer = 0;
+
+    for (let i = 0; i < 1000; i++) {
+      for (let j = 0; j < 1000; j++) {
+        answer += this._grid[i][j];
+      }
+    }
+
+    return answer;
+  }
+}
+
+interface iInstruction {
+  type: SwitchType,
+  start: iCoordinate,
+  end: iCoordinate
+}
+
+interface iCoordinate {
+  x: number,
+  y: number
+}
+
+enum SwitchType {
+  turnOn,
+  turnOff,
+  toggle
+}

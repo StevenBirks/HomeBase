@@ -1,0 +1,1 @@
+start powershell -workingdirectory "F:\Common\Steve\Programming\Projects\HomeBase\src\app\areas\projects\advent-of-code\powershell" -ArgumentList '-noExit -file .\day1.ps1'
