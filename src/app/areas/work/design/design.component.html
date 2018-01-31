@@ -1,0 +1,71 @@
+<div class="design-container with-background-image p-3">
+  <h2>
+    <a href="https://blog.angular-university.io/angular-material-data-table/">
+        Angular Reactive design
+    </a>
+  </h2>
+  <p>
+    MatInputModule: this contains the components and directives for adding Material design Input Boxes to our application (needed for the search input box)
+  </p>
+  <p>
+    MatTableModule: this is the core data table module, which includes the mat-table component and many related components and directives
+  </p>
+  <p>
+    MatPaginatorModule: this is a generic pagination module, that can be used to paginate data in general. This module can also be used separately from the Data table, for example for implementing Detail pagination logic in a Master-Detail setup
+  </p>
+  <p>
+    MatSortModule: this is an optional module that allows adding sortable headers to a data table
+  </p>    
+  <p>
+    MatProgressSpinnerModule: this module includes the progress indicator component that we will be using to indicate that data is being loaded from the backend
+  </p> 
+
+  <div>
+
+
+
+  <div class="spinner-container" *ngIf="loading$ | async">
+      <mat-spinner></mat-spinner>
+  </div>
+
+  <mat-input-container>
+      <input matInput placeholder="Search lessons" (keyup)="applyFilter($event.target.value)">
+  </mat-input-container>
+
+  <mat-table class="lessons-table mat-elevation-z8" [dataSource]="lessonsDataSource"  
+             matSort matSortActive="seqNo" matSortDirection="asc" matSortDisableClear>
+      <ng-container matColumnDef="seqNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>#</mat-header-cell>
+          <mat-cell *matCellDef="let lesson">{{lesson.seqNo}}</mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+          <mat-cell class="description-cell"
+                    *matCellDef="let lesson">{{lesson.description}}</mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="duration">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Duration</mat-header-cell>
+          <mat-cell class="duration-cell"
+                    *matCellDef="let lesson">{{lesson.duration}}</mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="['seqNo','description','duration']"></mat-header-row>
+      
+      <mat-row *matRowDef="let row; columns: ['seqNo','description','duration']"></mat-row>
+      
+  </mat-table>
+</div>
+
+  <p>
+      The Data table simply subscribes to an Observable provided by the Data Source. When that Observable emits a new value, it will contain a list of lessons that then get's displayed in the data table.
+  </p>
+  <p>
+      A BehaviorSubject - its subscribers will always get its latest emitted value (or an initial value), even if they subscribed late (after the value was emitted).
+  </p>
+  <p>
+      Why use BehaviorSubject?
+      Using BehaviorSubject is a great way of writing code that works independently of the order that we use to perform asynchronous operations such as: calling the backend, binding the data table to the data source, etc.
+  </p>
+</div>
