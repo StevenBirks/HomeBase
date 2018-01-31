@@ -46,7 +46,7 @@ export class DesignComponent implements OnInit {
     }
     let newLesson3 = <iLesson> {
       description: "Lesson 3 description",
-      duration: "5:01",
+      duration: "5:02",
       seqNo: 3
     };
 
