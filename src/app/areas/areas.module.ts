@@ -5,6 +5,7 @@ import { GamesComponent } from './games/games.component';
 import { AngularMaterialModule } from '../shared/angular-material/angular-material.module';
 import { MusicModule } from './music/music.module';
 import { AdventOfCodeModule } from './projects/advent-of-code/advent-of-code.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,11 @@ import { AdventOfCodeModule } from './projects/advent-of-code/advent-of-code.mod
     MusicModule,
     AreasRouterModule,
     AngularMaterialModule,
-    AdventOfCodeModule
+    AdventOfCodeModule,
+    SharedModule
   ],
   exports: [
+    SharedModule
   ]
 })
 export class AreasModule { }

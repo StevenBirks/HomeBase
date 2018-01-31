@@ -76,6 +76,8 @@ import { Day8_5_2015Component } from './2015/day8/day8-5.component';
 import { Day8_2015Component } from './2015/day8/day8.component';
 import { Day9_5_2015Component } from './2015/day9/day9-5.component';
 import { Day9_2015Component } from './2015/day9/day9.component';
+import { Day10_5_2015Component } from './2015/day10/day10-5.component';
+import { Day10_2015Component } from './2015/day10/day10.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +153,9 @@ import { Day9_2015Component } from './2015/day9/day9.component';
     Day8_5_2015Component,
     Day8_2015Component,
     Day9_5_2015Component,
-    Day9_2015Component
+    Day9_2015Component,
+    Day10_5_2015Component,
+    Day10_2015Component
     ],
   imports: [
       CommonModule,
