@@ -11,7 +11,8 @@ import { WorkModule } from './work/work.module';
 @NgModule({
   declarations: [
     ProjectsComponent,
-    GamesComponent  ],
+    GamesComponent
+    ],
   imports: [
     MusicModule,
     AreasRouterModule,
