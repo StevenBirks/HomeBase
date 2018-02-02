@@ -1,13 +1,3 @@
-c:\Projects\HomeBase\src\Api\bin\Debug\netcoreapp2.0\Api.deps.json
-c:\Projects\HomeBase\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
-c:\Projects\HomeBase\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json
-c:\Projects\HomeBase\src\Api\bin\Debug\netcoreapp2.0\Api.dll
-c:\Projects\HomeBase\src\Api\bin\Debug\netcoreapp2.0\Api.pdb
-c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.csproj.CoreCompileInputs.cache
-c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cache
-c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
-c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.dll
-c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
 C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.deps.json
 C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
 C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json

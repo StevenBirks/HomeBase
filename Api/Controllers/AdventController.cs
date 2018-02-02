@@ -28,7 +28,7 @@ namespace Api.Controllers
                 StartedP2 = false, 
                 AdventDay = new AdventDayDto {
                     Year = year,
-                    Day = 1
+                    Day = 11
                 }
             });
 
