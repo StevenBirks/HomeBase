@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class Day10_5_2015Component implements OnInit {
 
   constructor() {
-    this.inputString = "3113322113";
   }
 
   public inputString: string;
