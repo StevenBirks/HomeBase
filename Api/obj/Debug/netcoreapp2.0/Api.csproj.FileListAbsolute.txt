@@ -8,3 +8,13 @@ c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cach
 c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
 c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.dll
 c:\Projects\HomeBase\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
+C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.deps.json
+C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
+C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json
+C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.dll
+C:\Projects\HomeBase\api\bin\Debug\netcoreapp2.0\Api.pdb
+C:\Projects\HomeBase\api\obj\Debug\netcoreapp2.0\Api.csproj.CoreCompileInputs.cache
+C:\Projects\HomeBase\api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cache
+C:\Projects\HomeBase\api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
+C:\Projects\HomeBase\api\obj\Debug\netcoreapp2.0\Api.dll
+C:\Projects\HomeBase\api\obj\Debug\netcoreapp2.0\Api.pdb
