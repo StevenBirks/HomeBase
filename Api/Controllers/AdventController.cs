@@ -10,7 +10,7 @@ namespace Api.Controllers
         // private readonly IBacklogQueries _backlogQueries;
 
         public AdventController(
-            // IBacklogQueries backlogQueries
+        // IBacklogQueries backlogQueries
         )
         {
             // _backlogQueries = backlogQueries ?? throw new ArgumentNullException(nameof(backlogQueries));
@@ -21,15 +21,23 @@ namespace Api.Controllers
         {
             var adventDaysDto = new List<AdventStatusDto>();
 
-            adventDaysDto.Add(new AdventStatusDto {
-                CompletedP1 = false,
+            // abstract to query;
+
+            adventDaysDto.Add(new AdventStatusDto
+            {
+                CompletedP1 = true,
+                CompletedP2 = true,
+                StartedP1 = true,
+                StartedP2 = true,
+                AdventDay = new AdventDayDto { Year = year, Day = 11 }
+            });
+            adventDaysDto.Add(new AdventStatusDto
+            {
+                CompletedP1 = true,
                 CompletedP2 = false,
-                StartedP1 = false,
-                StartedP2 = false, 
-                AdventDay = new AdventDayDto {
-                    Year = year,
-                    Day = 12
-                }
+                StartedP1 = true,
+                StartedP2 = true,
+                AdventDay = new AdventDayDto { Year = year, Day = 12 }
             });
 
             return Ok(adventDaysDto);

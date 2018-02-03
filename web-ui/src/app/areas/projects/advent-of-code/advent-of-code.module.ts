@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { AdventOfCodeService } from './advent-of-code.service';
 import { AdventOfCodeComponent } from './advent-of-code.component';
 import { DayBlockComponent } from './2017/day-block/day-block.component';
 import { Day10_5Component } from './2017/day10/day10-5.component';
@@ -169,10 +171,14 @@ import { Day12_2015Component } from './2015/day12/day12.component';
       CommonModule,
       AngularMaterialModule,
       FormsModule,
-      ClipboardModule
+      ClipboardModule,
+      HttpClientModule
   ],
   exports: [
     AdventOfCodeComponent,    
+  ],
+  providers: [
+    AdventOfCodeService
   ]
 })
 export class AdventOfCodeModule { }

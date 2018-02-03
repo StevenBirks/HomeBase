@@ -7,6 +7,5 @@ namespace Api.Models
         public bool StartedP2 { get; set; }
         public bool CompletedP1 { get; set; }
         public bool CompletedP2 { get; set; }
-
     }
 }

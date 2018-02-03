@@ -1,36 +1,44 @@
 <div class="container-fluid mx-0 pt-4 aoc-2015">
-    <div class="row">
-        <section class="day-block-container col">
-          <div class="day-title-container">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <h2>12</h2>
-          </div>
-          <app-2015-day12></app-2015-day12>
-        </section>
-        <section class="day-block-container col">
-          <div class="day-title-container">
-            <i class="fa fa-star" aria-hidden="true" hidden></i>
-            <h2>12.5</h2>
-          </div>
-          <app-2015-day12-5></app-2015-day12-5>
-        </section>
+  <div class="row">
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(12).completedP1"></i>
+        </div>
+        <h2>12</h2>
       </div>
-    <div class="row">
-        <section class="day-block-container col">
-          <div class="day-title-container">
-            <i class="fa fa-star" aria-hidden="true" ></i>
-            <h2>11</h2>
-          </div>
-          <app-2015-day11></app-2015-day11>
-        </section>
-        <section class="day-block-container col">
-          <div class="day-title-container">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <h2>11.5</h2>
-          </div>
-          <app-2015-day11-5></app-2015-day11-5>
-        </section>
+      <app-2015-day12></app-2015-day12>
+    </section>
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(12).completedP2"></i>
+        </div>
+        <h2>12.5</h2>
       </div>
+      <app-2015-day12-5></app-2015-day12-5>
+    </section>
+  </div>
+  <div class="row">
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(11).completedP1"></i>
+        </div>
+        <h2>11</h2>
+      </div>
+      <app-2015-day11></app-2015-day11>
+    </section>
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(11).completedP2"></i>
+        </div>
+        <h2>11.5</h2>
+      </div>
+      <app-2015-day11-5></app-2015-day11-5>
+    </section>
+  </div>
   <div class="row">
     <section class="day-block-container col">
       <div class="day-title-container">

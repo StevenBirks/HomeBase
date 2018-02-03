@@ -1,40 +1,41 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AdventStatusDto } from '../../advent-status.dto';
+import { AdventOfCodeService } from '../../advent-of-code.service';
 
 @Component({
   selector: 'app-day-block-2015',
   templateUrl: './day-block.component.html',
   styleUrls: ['./day-block.component.scss']
 })
+
 export class DayBlock_2015Component implements OnInit {
 
-  // public days: iDay[];
+  constructor(private adventService: AdventOfCodeService) {
+    this.adventStatuses = new Array<AdventStatusDto>();
+  }
 
-  constructor() {
-   }
+  public adventStatuses: AdventStatusDto[];
+  public loading: boolean;
 
   ngOnInit() {
-    // this.days = new Array<iDay>();
+    this.getStatusesForYear(2015);
+  }
 
-    // for (let i = 25; i > 0; i--) {
-    //   let newDay = <iDay> {
-    //     day: `${i}`,
-    //     dayCompleted: false,
-    //     dayPt2: `${i}.5`,
-    //     dayPt2Completed: false,
-    //     component: `<app-2015-day${i}></app-2015-day${i}>`,
-    //     componentPt2: `<app-2015-day${i}-5></app-2015-day${i}-5>`,
-    //   };
+  getStatusesForYear(year: number) {
+    this.loading = true;
+    this.adventService.getAdventStatusForYear(year)
+      .subscribe((statuses: AdventStatusDto[]) => {
+        this.adventStatuses = statuses;
+        this.loading = false;
+      });
+  }
 
-    //   this.days.push(newDay);
-    // }
+  getStatusForDay(day: number): AdventStatusDto {
+    const result = this.adventStatuses.find((status) => {
+      return status.adventDay.day === day;
+    });
+
+    return result;
   }
 }
 
-// interface iDay {
-//   day: string,
-//   dayCompleted: boolean,
-//   dayPt2: string,
-//   dayPt2Completed: boolean,
-//   component: string,
-//   componentPt2: string
-// }
