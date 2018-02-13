@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ namespace Api
         {
             services.AddCors();
             services.AddMvc();
+
+            services.AddScoped<IAdventQueries, AdventQueries>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -34,16 +34,6 @@
       height: calc(100vh - 5rem) !important;
     }
 
-    .sub-tab-group {
-        .mat-tab-header {
-            margin-left: 2rem;
-            margin-right: 2rem;
-        }
-        .mat-tab-body-content {
-            height: calc(100vh - 14rem - 1px) !important;
-          }
-    }
-
     a:hover {
         &.link-with-title {
         text-decoration: none;
