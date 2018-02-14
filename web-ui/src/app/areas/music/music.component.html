@@ -1,22 +1,5 @@
-<div> 
-    <div *ngFor="let tile of tiles">
-        <div>{{ tile.header }}</div>
-    </div>
-    <div *ngFor="let tile of tiles">
+<div class="tile-container"> 
+    <div class="tile-wrapper" *ngFor="let tile of tiles">
         <app-tile [tile]="tile"></app-tile>            
     </div>
 </div>
-
-<div class='music-container'>
-    <mat-tab-group>
-        <mat-tab label="Piano">
-            <app-piano></app-piano>
-        </mat-tab>
-        <mat-tab label="Guitar">
-            <app-guitar></app-guitar>
-        </mat-tab>
-    </mat-tab-group>
-</div>
-        
-        
-        

@@ -1,10 +1,13 @@
-<div class="tile-container" [style.background-color]="tile.colour">
-    <a [routerLink]="tile.linkUrl">
-  <div>{{ tile.header }}</div>
-  <div>{{ tile.description }}</div>
-  <div>{{ tile.imageUrl }}</div>
+<div class="tile" [style.backgroundColor]="tile.colour">
+  <a [routerLink]="tile.linkUrl" class="">
+    <div class="row mx-0 h-100 p-3">
+      <div class="col pl-0">
+        <div class="tile-title">{{ tile.header }}</div>
+        <div class="tile-description">{{ tile.description }}</div>
+      </div>
+      <div class="col p-0">
+        <div class="tile-icon" [style.backgroundImage]="tile.imageUrl"></div>
+      </div>
+    </div>
   </a>
 </div>
-
-
-

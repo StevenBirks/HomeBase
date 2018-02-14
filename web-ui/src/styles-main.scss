@@ -29,6 +29,25 @@
             color: mat-color($primary);
         }
     }
+
+    .tile-container {
+        border: 2px black;
+        display: flex;        
+        align-items: start;
+        justify-content: start;
+        flex-flow: row wrap;
+        align-content: flex-end;
+
+        .tile-wrapper {
+            display: flex;
+            flex: 1;
+            min-width: 20rem;
+        }
+
+        app-tile {
+            width: 100%;
+        }
+    }
     
     .mat-tab-body-content {
       height: calc(100vh - 5rem) !important;

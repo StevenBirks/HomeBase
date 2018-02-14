@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AdventOfCodeService } from './advent-of-code.service';
-import { AdventOfCodeComponent } from './advent-of-code.component';
 import { DayBlockComponent } from './2017/day-block/day-block.component';
 import { Day10_5Component } from './2017/day10/day10-5.component';
 import { Day1Component } from './2017/day1/day1.component';
@@ -84,6 +83,7 @@ import { Day11_5_2015Component } from './2015/day11/day11-5.component';
 import { Day11_2015Component } from './2015/day11/day11.component';
 import { Day12_5_2015Component } from './2015/day12/day12-5.component';
 import { Day12_2015Component } from './2015/day12/day12.component';
+import { AdventOfCodeComponent } from './advent-of-code.component';
 
 @NgModule({
   declarations: [
@@ -175,7 +175,7 @@ import { Day12_2015Component } from './2015/day12/day12.component';
       HttpClientModule
   ],
   exports: [
-    AdventOfCodeComponent,    
+    AdventOfCodeComponent
   ],
   providers: [
     AdventOfCodeService

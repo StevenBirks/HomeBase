@@ -6,16 +6,21 @@ import { GamesComponent } from './games/games.component';
 import { MusicComponent } from './music/music.component';
 
 const areasRoutes: Routes = [
-  { path: 'work', component: WorkComponent},
-  { path: 'projects', component: ProjectsComponent},
-  { path: 'music', component: MusicComponent},
-  { path: 'games', component: GamesComponent}
+  { path: 'work', component: WorkComponent}
 ]
+
+const lazyAreasRoutes: Routes = [
+  { path: 'music', loadChildren: './music/music.module#MusicModule'},
+  { path: 'games', loadChildren: './games/games.module#GamesModule'},
+  { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule'}
+];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(areasRoutes)    
+    RouterModule.forChild(areasRoutes),
+    RouterModule.forRoot(lazyAreasRoutes)   
   ],
+  exports: [ RouterModule ],
   declarations: []
 })
 export class AreasRouterModule { }

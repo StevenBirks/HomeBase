@@ -1,6 +1,5 @@
-<div class='projects-container'>
-    <app-advent-of-code></app-advent-of-code>
+<div class="tile-container">
+    <div class="tile-wrapper" *ngFor="let tile of tiles">
+        <app-tile [tile]="tile"></app-tile>
+    </div>
 </div>
-        
-        
-        

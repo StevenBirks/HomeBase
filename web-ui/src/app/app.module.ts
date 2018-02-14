@@ -6,6 +6,7 @@ import { AreasModule } from './areas/areas.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home.component';
     SharedModule,
     AreasModule,
     RouterModule,
-    AppRouterModule
+    AppRouterModule,
+    BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

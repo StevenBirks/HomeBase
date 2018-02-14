@@ -11,15 +11,50 @@ import { iTile } from '../../shared/interfaces/tile.interface';
 })
 export class MusicComponent implements OnInit {
 
-  constructor(private musicTileService: MusicTilesService) { }
+  constructor(private musicTileService: MusicTilesService) {
+    this.tiles = new Array<iTile>();
+  }
 
   tiles: iTile[];
 
   ngOnInit() {
-    console.log(this.musicTileService.musicTiles);
-
-    this.tiles = new Array<iTile>();
-
+    this.addAllTiles();
     this.tiles = this.musicTileService.musicTiles;
+  }
+
+  addAllTiles() {
+    this.addPianoTile();
+    this.addGuitarTile();
+    this.addDrumsTile();
+  }
+
+  addPianoTile() {
+    this.musicTileService.addTile(<iTile>{
+      colour: "rgba(82, 79, 252, 0.4)",
+      description: "piano stuffs",
+      header: "Piano",
+      imageUrl: "url('../../../../assets/piano-opaque.png')",
+      linkUrl: "piano"
+    });
+  }
+
+  addGuitarTile() {
+    this.musicTileService.addTile(<iTile>{
+      colour: "yellow",
+      description: "guitar stuffs",
+      header: "Guitar",
+      imageUrl: "url('../../../../assets/guitar-opaque.png')",
+      linkUrl: "guitar"
+    });
+  }
+
+  addDrumsTile() {
+    this.musicTileService.addTile(<iTile>{
+      colour: "red",
+      description: "drums stuffs",
+      header: "Drums",
+      imageUrl: "url('../../../../assets/drums-opaque.png')",
+      linkUrl: "drums"
+    });
   }
 }

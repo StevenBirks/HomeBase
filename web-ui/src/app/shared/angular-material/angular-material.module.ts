@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { 
   MatTabsModule,
   MatButtonModule,
@@ -15,8 +15,8 @@ import {
     MatInputModule
   ],
   imports: [
-    CommonModule,
-    BrowserAnimationsModule
+    CommonModule//,
+    //BrowserAnimationsModule
   ],
   providers: [
   ],

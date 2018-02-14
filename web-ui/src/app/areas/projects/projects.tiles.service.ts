@@ -2,24 +2,24 @@ import { Injectable } from '@angular/core';
 import { iTile } from '../../shared/interfaces/tile.interface';
 
 @Injectable()
-export class MusicTilesService {
+export class ProjectsTilesService {
 
   constructor() {
-    this.musicTiles = new Array<iTile>();
+    this.projectsTiles = new Array<iTile>();
   }
 
-  musicTiles: iTile[];
+  projectsTiles: iTile[];
 
   addTile(newTile: iTile) {
-    if (this.musicTiles.filter((tile) => {
+    if (this.projectsTiles.filter((tile) => {
       return tile.linkUrl == newTile.linkUrl;
     }).length === 0) {
-      this.musicTiles.push(newTile);
+      this.projectsTiles.push(newTile);
     }
   }
 
   clearTiles() {
-    this.musicTiles = new Array<iTile>();
+    this.projectsTiles = new Array<iTile>();
   }
 }
 

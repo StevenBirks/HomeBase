@@ -6,17 +6,28 @@ import { MusicComponent } from './music.component';
 import { GuitarComponent } from './guitar/guitar.component';
 import { MusicTilesService } from './music.tiles.service';
 import { SharedModule } from '../../shared/shared.module';
+import { Routes, RouterModule } from '@angular/router';
+import { DrumsComponent } from './drums/drums.component';
+
+const routes: Routes = [
+  { path: '', component: MusicComponent, pathMatch: 'full' },
+  { path: 'piano', component: PianoComponent },
+  { path: 'guitar', component: GuitarComponent },
+  { path: 'drums', component: DrumsComponent },
+];
 
 @NgModule({
   declarations: [
     MusicComponent,
     PianoComponent,
-    GuitarComponent
+    GuitarComponent,
+    DrumsComponent
     ],
   imports: [
     AngularMaterialModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forChild(routes)
   ],
   providers: [
     MusicTilesService
