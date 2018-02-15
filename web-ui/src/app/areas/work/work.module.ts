@@ -3,19 +3,21 @@ import { CommonModule } from '@angular/common';
 import { WorkComponent } from './work.component';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 import { DesignComponent } from './design/design.component';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
-  MatSortModule, MatTableModule } from "@angular/material";
+import { Routes, RouterModule } from '@angular/router';
+  
+  const routes: Routes = [
+    { path: '', component: WorkComponent, pathMatch: 'full' }
+  ];
 
 @NgModule({
+  declarations: [ 
+    WorkComponent,
+    DesignComponent
+  ],
   imports: [
     CommonModule,
     AngularMaterialModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule
-  ],
-  declarations: [WorkComponent, DesignComponent]
+    RouterModule.forChild(routes)
+  ]
 })
 export class WorkModule { }

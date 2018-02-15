@@ -7,17 +7,19 @@ import { SharedModule } from '../../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AdventOfCodeComponent } from './advent-of-code/advent-of-code.component';
 import { AdventOfCodeModule } from './advent-of-code/advent-of-code.module';
+import { StorageLabellingComponent } from './storage-labelling/storage-labelling.component';
 
 const routes: Routes = [
   { path: '', component: ProjectsComponent, pathMatch: 'full' },
-  { path: 'advent-of-code', component: AdventOfCodeComponent }
+  { path: 'advent-of-code', component: AdventOfCodeComponent },
+  { path: 'storage-labelling', component: StorageLabellingComponent }
 ];
 
 @NgModule({
   declarations: [
     ProjectsComponent,
-    //AdventOfCodeComponent
-  ],
+    StorageLabellingComponent
+    ],
   imports: [
     AngularMaterialModule,
     CommonModule,
@@ -26,7 +28,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports: [
-    //AdventOfCodeComponent
   ],
   providers: [
     ProjectsTilesService

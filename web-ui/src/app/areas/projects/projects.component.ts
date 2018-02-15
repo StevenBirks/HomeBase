@@ -22,6 +22,7 @@ export class ProjectsComponent implements OnInit {
 
   addAllTiles() {
     this.addAdventOfCodeTile();
+    this.addStorageLabellingTile();
   }
 
   addAdventOfCodeTile() {
@@ -31,6 +32,16 @@ export class ProjectsComponent implements OnInit {
       header: "Advent Of Code",
       imageUrl: "url('../../../../assets/piano-opaque.png')",
       linkUrl: "advent-of-code"
+    });
+  }
+
+  addStorageLabellingTile() {
+    this.projectsTileService.addTile(<iTile>{
+      colour: "#FF5733",
+      description: "label creation for storage",
+      header: "Storage labels",
+      imageUrl: "url('../../../../assets/storage-opaque.png')",
+      linkUrl: "storage-labelling"
     });
   }
 }

@@ -1,22 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { 
   MatTabsModule,
   MatButtonModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatProgressSpinnerModule,
  } from '@angular/material';
 
 @NgModule({
   exports: [
     MatTabsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
   ],
   imports: [
-    CommonModule//,
-    //BrowserAnimationsModule
+    CommonModule
   ],
   providers: [
   ],
