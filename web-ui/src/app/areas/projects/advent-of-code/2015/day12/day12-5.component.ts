@@ -16,33 +16,30 @@ export class Day12_5_2015Component implements OnInit {
   ngOnInit() {
   }
 
-  public calculate(): void {
-    this._inputArray = new Array<string>();
+  public calculate(): void {  
 
-    this.inputString.split("").forEach((input) => {
-      if (isNaN(Number.parseInt(input)) && input !== '-' && input !== ',') { }
-      else {
-        this._inputArray.push(input);
-      }
-    });
+   let thing = JSON.parse(this.inputString);
+   console.log(thing);
+   this.answer = this.countNonRedNumbers(thing);
+  }
 
-    this.inputString = this._inputArray.join("");
+  private countNonRedNumbers(obj: any): number {
+    let array;
+    if (Array.isArray(obj))
+        array = obj;
+    else {
+        array = Object.keys(obj).map(key => obj[key]);
+        if (array.includes("red")) return 0;
+    }
 
-    console.log(this._inputArray.join(""));
+    return array.reduce((sum, item) => {
+        let value = 0;
+        if (typeof item === "number")
+            value = item;
+        else if (typeof item === "object")
+            value = this.countNonRedNumbers(item);
 
-    let numberArray = new Array<number>();
-
-    this.inputString.split(",").forEach((input) => {
-      let result = Number.parseInt(input);
-      if (!isNaN(result)) {
-        numberArray.push(result);
-      }
-    });
-
-    this.answer = 0;
-
-    numberArray.forEach((value) => {
-      this.answer += value;
-    })
+        return sum + value;
+    }, 0);
   }
 }
