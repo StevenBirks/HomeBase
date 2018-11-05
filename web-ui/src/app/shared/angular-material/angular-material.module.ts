@@ -9,6 +9,8 @@ import {
   MatPaginatorModule,
   MatSortModule,
   MatProgressSpinnerModule,
+  MatCheckboxModule,
+  MatTreeModule,
  } from '@angular/material';
 
 @NgModule({
@@ -20,6 +22,8 @@ import {
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
+    MatCheckboxModule,
+    MatTreeModule
   ],
   imports: [
     CommonModule

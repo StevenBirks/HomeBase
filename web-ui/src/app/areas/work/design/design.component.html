@@ -28,9 +28,9 @@
       <mat-spinner></mat-spinner>
   </div>
 
-  <mat-input-container>
+  <mat-form-field>
       <input matInput placeholder="Search lessons" (keyup)="applyFilter($event.target.value)">
-  </mat-input-container>
+  </mat-form-field>
 
   <mat-table class="lessons-table mat-elevation-z8" [dataSource]="lessonsDataSource"  
              matSort matSortActive="seqNo" matSortDirection="asc" matSortDisableClear>

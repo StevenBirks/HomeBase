@@ -5,8 +5,9 @@ import { AngularMaterialModule } from '../../shared/angular-material/angular-mat
 import { DesignComponent } from './design/design.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialDesignComponent } from './material-design/material-design.component';
-  
-  const routes: Routes = [
+import { SharedModule } from '../../shared/shared.module';
+
+const routes: Routes = [
     { path: '', component: WorkComponent, pathMatch: 'full' }
   ];
 
@@ -19,6 +20,7 @@ import { MaterialDesignComponent } from './material-design/material-design.compo
   imports: [
     CommonModule,
     AngularMaterialModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })
