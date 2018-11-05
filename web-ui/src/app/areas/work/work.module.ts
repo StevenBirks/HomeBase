@@ -4,6 +4,7 @@ import { WorkComponent } from './work.component';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 import { DesignComponent } from './design/design.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MaterialDesignComponent } from './material-design/material-design.component';
   
   const routes: Routes = [
     { path: '', component: WorkComponent, pathMatch: 'full' }
@@ -12,7 +13,8 @@ import { Routes, RouterModule } from '@angular/router';
 @NgModule({
   declarations: [ 
     WorkComponent,
-    DesignComponent
+    DesignComponent,
+    MaterialDesignComponent,
   ],
   imports: [
     CommonModule,
