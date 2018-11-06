@@ -47,9 +47,7 @@ export class Day9_2015Component implements OnInit {
     })
 
     this.calculateRoutes();
-
-    console.log(this._routes);
-
+    
     var thing = this._routes.filter((route) => {
       return route.current;
     }).map((route) => {
