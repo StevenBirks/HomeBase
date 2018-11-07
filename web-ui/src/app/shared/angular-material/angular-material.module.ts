@@ -11,6 +11,8 @@ import {
   MatProgressSpinnerModule,
   MatCheckboxModule,
   MatTreeModule,
+  MatIconModule,
+  MatBadgeModule
  } from '@angular/material';
 
 @NgModule({
@@ -23,7 +25,9 @@ import {
     MatSortModule,
     MatProgressSpinnerModule,
     MatCheckboxModule,
-    MatTreeModule
+    MatTreeModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   imports: [
     CommonModule
