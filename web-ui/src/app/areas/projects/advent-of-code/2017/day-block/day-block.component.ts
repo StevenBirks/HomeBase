@@ -1,24 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { AdventOfCodeService } from '../../advent-of-code.service';
+import { DayBlockBaseComponent } from '../../day-block/day-block-base.component';
 
 @Component({
   selector: 'app-day-block-2017',
-  templateUrl: './day-block.component.html',
-  styleUrls: ['./day-block.component.scss']
+  templateUrl: './day-block.component.html'
 })
-export class DayBlockComponent implements OnInit {
+
+export class DayBlock_2017Component extends DayBlockBaseComponent {
 
   public day1: string;
   public day13_5: string;
   public day1IsCopied: boolean;
   public day13_5IsCopied: boolean;
 
+  constructor(protected adventService: AdventOfCodeService) {
+    super(adventService, 2017);
 
-  constructor() {
     this.day1 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\src\\app\\areas\\projects\\advent-of-code\\powershell";
     this.day13_5 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\src\\app\\areas\\projects\\advent-of-code\\powershell";
-   }
-
-  ngOnInit() {
   }
-
 }
+

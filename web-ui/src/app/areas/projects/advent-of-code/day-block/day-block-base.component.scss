@@ -40,10 +40,6 @@
         }
     }
 
-    .icon-container {
-        display: inline-block;
-    }
-
     .fa-star {
         color: yellow;
         display: inline-block;
@@ -52,13 +48,30 @@
     }
 }
 
+
 .aoc-2015 {
-    background-image: url("../../../../../../assets/aoc-2015.png");
+    background-image: url("../../../../../assets/aoc-2015.png");
     background-color:#161828;
     background-size: contain;
 }
-
+.aoc-2016 {
+    background-image: url("../../../../../assets/aoc-2017.png");
+    background-color:#161828;
+    background-size: contain;
+}
+.aoc-2017 {
+    background-image: url("../../../../../assets/aoc-2017.png");
+    background-color:#161828;
+    background-size: contain;
+}
+.aoc-2018 {
+    background-image: url("../../../../../assets/aoc-2017.png");
+    background-color:#161828;
+    background-size: contain;
+}
 .row {
     margin-left: 0;
     margin-right: 0;
 }
+
+

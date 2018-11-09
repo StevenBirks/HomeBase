@@ -1,41 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AdventStatusDto } from '../../advent-status.dto';
+import { Component } from '@angular/core';
 import { AdventOfCodeService } from '../../advent-of-code.service';
+import { DayBlockBaseComponent } from '../../day-block/day-block-base.component';
 
 @Component({
   selector: 'app-day-block-2018',
-  templateUrl: './day-block.component.html',
-  styleUrls: ['./day-block.component.scss']
+  templateUrl: './day-block.component.html'
 })
 
-export class DayBlock_2018Component implements OnInit {
+export class DayBlock_2018Component extends DayBlockBaseComponent {
 
-  constructor(private adventService: AdventOfCodeService) {
-    this.adventStatuses = new Array<AdventStatusDto>();
-  }
-
-  public adventStatuses: AdventStatusDto[];
-  public loading: boolean;
-
-  ngOnInit() {
-    this.getStatusesForYear(2018);
-  }
-
-  getStatusesForYear(year: number) {
-    this.loading = true;
-    this.adventService.getAdventStatusForYear(year)
-      .subscribe((statuses: AdventStatusDto[]) => {
-        this.adventStatuses = statuses;
-        this.loading = false;
-      });
-  }
-
-  getStatusForDay(day: number): AdventStatusDto {
-    const result = this.adventStatuses.find((status) => {
-      return status.adventDay.day === day;
-    });
-
-    return result;
+  constructor(protected adventService: AdventOfCodeService) {
+    super(adventService, 2018);
   }
 }
-

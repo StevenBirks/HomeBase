@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AdventOfCodeService } from './advent-of-code.service';
-import { DayBlockComponent } from './2017/day-block/day-block.component';
+import { DayBlockBaseComponent } from './day-block/day-block-base.component';
+import { DayBlock_2017Component } from './2017/day-block/day-block.component';
 import { Day10_5Component } from './2017/day10/day10-5.component';
 import { Day1Component } from './2017/day1/day1.component';
 import { Day1_5Component } from './2017/day1/day1-5.component';
@@ -93,7 +94,8 @@ import { DayBlock_2018Component } from './2018/day-block/day-block.component';
 @NgModule({
   declarations: [
     AdventOfCodeComponent,
-    DayBlockComponent,
+    DayBlockBaseComponent,
+    DayBlock_2017Component,
     Day1Component,
     Day1_5Component,
     Day2Component,

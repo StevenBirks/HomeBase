@@ -8,12 +8,14 @@ import { MusicTilesService } from './music.tiles.service';
 import { SharedModule } from '../../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { DrumsComponent } from './drums/drums.component';
+import { ViolinComponent } from './violin/violin.component';
 
 const routes: Routes = [
   { path: '', component: MusicComponent, pathMatch: 'full' },
   { path: 'piano', component: PianoComponent },
   { path: 'guitar', component: GuitarComponent },
   { path: 'drums', component: DrumsComponent },
+  { path: 'violin', component: ViolinComponent },
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const routes: Routes = [
     MusicComponent,
     PianoComponent,
     GuitarComponent,
-    DrumsComponent
+    DrumsComponent,
+    ViolinComponent
     ],
   imports: [
     AngularMaterialModule,

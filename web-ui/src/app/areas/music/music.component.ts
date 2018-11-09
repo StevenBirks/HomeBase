@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTabChangeEvent } from '@angular/material';
 import { MusicTilesService } from './music.tiles.service';
 import { iTile } from '../../shared/interfaces/tile.interface';
 
@@ -26,6 +25,8 @@ export class MusicComponent implements OnInit {
     this.addPianoTile();
     this.addGuitarTile();
     this.addDrumsTile();
+    this.addDrumsTile();
+    this.addViolinTile();
   }
 
   addPianoTile() {
@@ -57,4 +58,14 @@ export class MusicComponent implements OnInit {
       linkUrl: "drums"
     });
   }
+
+  addViolinTile() {
+    this.musicTileService.addTile(<iTile>{
+      colour: "green",
+      description: "violin stuffs",
+      header: "Violin",
+      imageUrl: "url('../../../../assets/violin-opaque.png')",
+      linkUrl: "violin"
+    });
+  }  
 }

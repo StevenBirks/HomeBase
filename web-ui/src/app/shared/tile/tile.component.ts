@@ -13,6 +13,7 @@ export class TileComponent implements OnInit {
   @Input() tile: iTile;
 
   ngOnInit() {
+    console.log(this.tile);
   }
 
 }
