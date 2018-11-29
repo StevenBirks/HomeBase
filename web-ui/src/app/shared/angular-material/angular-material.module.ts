@@ -12,7 +12,10 @@ import {
   MatCheckboxModule,
   MatTreeModule,
   MatIconModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule
  } from '@angular/material';
 
 @NgModule({
@@ -27,7 +30,10 @@ import {
     MatCheckboxModule,
     MatTreeModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   imports: [
     CommonModule

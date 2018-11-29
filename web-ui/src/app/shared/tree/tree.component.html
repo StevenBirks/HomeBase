@@ -1,0 +1,13 @@
+<mat-tree [dataSource]="directoryTree" [treeControl]="treeControl">
+  <mat-nested-tree-node *matTreeNodeDef="let node">
+    <button mat-icon-button type="button" (click)="treeControl.toggle(node)"
+      [style.visibility]="!node.isFile ? 'visible' : 'hidden'">
+      <i class="fa fa-folder-open" aria-hidden="true"></i>
+    </button>
+    <span [matBadge]="node.children && node.children.length" [matBadgeHidden]="node.isFile"
+      matBadgeColor="accent"
+      matBadgeOverlap="false"
+    >{{node.name}}</span>
+    <ng-container matTreeNodeOutlet *ngIf="treeControl.isExpanded(node)"></ng-container>
+  </mat-nested-tree-node>
+</mat-tree>

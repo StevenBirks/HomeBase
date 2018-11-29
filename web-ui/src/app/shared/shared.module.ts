@@ -7,27 +7,27 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { PrintService } from './print/print.service';
+import { TreeComponent } from './tree/tree.component';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
     NavComponent,
     TileComponent,
     MainNavComponent,
+    TreeComponent,
     ],
   exports: [
     NavComponent,
     MainNavComponent,
-    TileComponent    
+    TileComponent,
+    TreeComponent  
     ],
   imports: [    
     CommonModule,
     RouterModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    AngularMaterialModule
   ],
   providers: [
     PrintService
