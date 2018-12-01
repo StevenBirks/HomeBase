@@ -11,11 +11,11 @@ import { DrumsComponent } from './drums/drums.component';
 import { ViolinComponent } from './violin/violin.component';
 
 const routes: Routes = [
-  { path: '', component: MusicComponent, pathMatch: 'full' },
-  { path: 'piano', component: PianoComponent },
-  { path: 'guitar', component: GuitarComponent },
-  { path: 'drums', component: DrumsComponent },
-  { path: 'violin', component: ViolinComponent },
+  { path: '', component: MusicComponent, pathMatch: 'full'},
+  { path: 'piano', component: PianoComponent, data: { breadcrumb: 'Piano' } },
+  { path: 'guitar', component: GuitarComponent, data: { breadcrumb: 'Guitar' }  },
+  { path: 'drums', component: DrumsComponent, data: { breadcrumb: 'Drums' }  },
+  { path: 'violin', component: ViolinComponent, data: { breadcrumb: 'Violin' }  },
 ];
 
 @NgModule({

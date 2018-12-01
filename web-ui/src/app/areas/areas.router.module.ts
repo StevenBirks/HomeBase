@@ -6,10 +6,10 @@ const areasRoutes: Routes = [
 ]
 
 const lazyAreasRoutes: Routes = [
-  { path: 'music', loadChildren: './music/music.module#MusicModule'},
-  { path: 'games', loadChildren: './games/games.module#GamesModule'},
-  { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule'},
-  { path: 'work', loadChildren: './work/work.module#WorkModule'}
+  { path: 'music', loadChildren: './music/music.module#MusicModule', data: { breadcrumb: 'Music' } },
+  { path: 'games', loadChildren: './games/games.module#GamesModule', data: { breadcrumb: 'Games' } },
+  { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule', data: { breadcrumb: 'Projects' } },
+  { path: 'work', loadChildren: './work/work.module#WorkModule', data: { breadcrumb: 'Work' } }
 ];
 
 @NgModule({

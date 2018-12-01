@@ -70,4 +70,16 @@
     .mat-nav-list {
         padding-top: 0 !important;
     }
+
+    breadcrumb {
+        .fluid-bread {
+            background-color: transparent;
+            .breadcrumb {
+                background-color: transparent;
+                .breadcrumb-item+.breadcrumb-item::before {
+                    content: "|";
+                }                
+            }
+        }
+    }
 }

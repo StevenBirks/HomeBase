@@ -1,7 +1,6 @@
 @import '~@angular/material/theming';
 @import './styles-main.scss';
-@import './app/shared/nav/nav.component.scss';
-@import './app//shared/main-nav/main-nav.component.scss';
+@import './app//main-nav/main-nav.component.scss';
 @import './app/areas/projects/advent-of-code/2017/day13/day13-5.component.scss';
 
 
@@ -14,7 +13,6 @@ $app-warn:    mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @mixin custom-theme($theme) {    
-    @include nav-theme($theme);
     @include main-nav-theme($theme);
     @include styles-main($theme);
     @include day13-5-theme($theme);

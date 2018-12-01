@@ -11,8 +11,8 @@ import { StorageLabellingComponent } from './storage-labelling/storage-labelling
 
 const routes: Routes = [
   { path: '', component: ProjectsComponent, pathMatch: 'full' },
-  { path: 'advent-of-code', component: AdventOfCodeComponent },
-  { path: 'storage-labelling', component: StorageLabellingComponent }
+  { path: 'advent-of-code', component: AdventOfCodeComponent, data: { breadcrumb: 'AOC' } },
+  { path: 'storage-labelling', component: StorageLabellingComponent,  data: { breadcrumb: 'Storage labels' } }
 ];
 
 @NgModule({
