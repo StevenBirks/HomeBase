@@ -2,6 +2,10 @@
     $primary: map-get($inTheme, primary);
     $accent: map-get($inTheme, accent); 
 
+    i {
+        margin-right: 1rem;
+    }
+
     body {
         margin: 0px;
         font-family: Sans-serif;
@@ -61,5 +65,9 @@
 
     .display-container {
         height: 10rem;
+    }
+
+    .mat-nav-list {
+        padding-top: 0 !important;
     }
 }
