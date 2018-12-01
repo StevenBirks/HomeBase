@@ -90,6 +90,8 @@ import { AdventOfCodeComponent } from './advent-of-code.component';
 
 // 2018
 import { DayBlock_2018Component } from './2018/day-block/day-block.component';
+import { Day1_2018Component } from './2018/day1/day1.component';
+import { Day1_5_2018Component } from './2018/day1/day1-5.component';
 
 @NgModule({
   declarations: [
@@ -176,7 +178,9 @@ import { DayBlock_2018Component } from './2018/day-block/day-block.component';
     Day13_5_2015Component,
     Day13_2015Component,
     //2018
-    DayBlock_2018Component
+    DayBlock_2018Component,
+    Day1_2018Component,
+    Day1_5_2018Component
     ],
   imports: [
       CommonModule,

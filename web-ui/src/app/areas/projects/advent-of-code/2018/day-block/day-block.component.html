@@ -1,3 +1,22 @@
-<p>
-  day-block works!
-</p>
+<div class="container-fluid mx-0 pt-4 aoc-2018">
+  <div class="row">
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(1).completedP1"></i>
+        </div>
+        <h2>1</h2>
+      </div>
+      <app-2018-day1></app-2018-day1>
+    </section>
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(1).completedP2"></i>
+        </div>
+        <h2>1.5</h2>
+      </div>
+      <app-2018-day1-5></app-2018-day1-5>
+    </section>
+  </div>
+</div>
