@@ -25,7 +25,6 @@ export class MusicComponent implements OnInit {
     this.addPianoTile();
     this.addGuitarTile();
     this.addDrumsTile();
-    this.addDrumsTile();
     this.addViolinTile();
   }
 

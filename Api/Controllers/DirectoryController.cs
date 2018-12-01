@@ -17,7 +17,7 @@ namespace Api.Controllers
         [HttpGet("tree", Name = "GetDirectoryTreeData")]
         public IActionResult Get([FromQuery(Name = "sublocation")]string subLocation)
         {
-            var directoryInfo = new DirectoryInfo(@"C:\Users\stevenb\Desktop");
+            var directoryInfo = new DirectoryInfo($@"F:\Common\Steve\Documents\{subLocation}");
 
             var directoryTreeDto = new List<DirectoryTreeDto>();
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Observable, of as observableOf } from 'rxjs';
+import { of as observableOf } from 'rxjs';
 import { TreeService } from './tree.service';
 import { DirectoryTreeDto } from './directoryTree.dto';
 
@@ -18,6 +18,8 @@ export class TreeComponent implements OnInit {
     this.treeService = treeService;
   }
 
+  @Input() finalLocation: string;
+
   public loading: boolean;
   public subLocation: string;
   protected treeService: TreeService;
@@ -25,13 +27,14 @@ export class TreeComponent implements OnInit {
   public treeControl = new NestedTreeControl<Item>(node => observableOf(node.children));
 
   ngOnInit() {
-    this.subLocation = 'music/drums';
+    console.log(this.finalLocation);
+    this.subLocation = 'music tab';
     this.getTreeData();
   }
 
   getTreeData() {
     this.loading = true;
-    this.treeService.getDirectoryTreeData(this.subLocation)
+    this.treeService.getDirectoryTreeData(`${this.subLocation}/${this.finalLocation}`)
       .subscribe((data: DirectoryTreeDto[]) => {
         this.directoryTree = data;
         this.loading = false;
