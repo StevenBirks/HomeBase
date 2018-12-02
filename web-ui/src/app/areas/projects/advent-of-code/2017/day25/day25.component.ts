@@ -113,7 +113,6 @@ export class Day25Component implements OnInit {
           this._moveRight();
           this._state = state.A;
         } else {
-          //this._writeValue(1);
           this._moveRight();
           this._state = state.E;
         }
@@ -127,7 +126,6 @@ export class Day25Component implements OnInit {
     }
 
     this.step++;
-    debugger;
     
     if (this.step < this.inputNumber) {
       setTimeout(() => {

@@ -96,7 +96,6 @@ export class Day13_5_2015Component implements OnInit {
   private CalculateTableHappiness(table: iTable): iTable {
     let happiness = 0;
     table.people.forEach(tablePerson => {
-debugger;
       let personIndex = table.people.findIndex((listPerson) => {
         return listPerson.name === tablePerson.name;
       });

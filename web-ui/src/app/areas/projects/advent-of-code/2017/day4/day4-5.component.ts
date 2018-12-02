@@ -9,7 +9,7 @@ export class Day4_5Component implements OnInit {
   constructor() { }
   public inputString: string;
   public answer: number;
-  
+
   ngOnInit() {
   }
 
@@ -22,11 +22,9 @@ export class Day4_5Component implements OnInit {
       const rowItemsArrayPhrases = new Array<string>();
       let valid = true;
 
-      debugger;
-
       for (const item of rowItemsArrayString) {
         if (rowItemsArrayPhrases.length === 0) {
-          rowItemsArrayPhrases.push(item);                      
+          rowItemsArrayPhrases.push(item);
         } else {
           const tempPhrases = rowItemsArrayPhrases.slice(0);
           for (const currentItem of tempPhrases) {
@@ -35,23 +33,23 @@ export class Day4_5Component implements OnInit {
               break;
             }
           }
-          
+
           if (!valid) {
             break;
           }
 
-          rowItemsArrayPhrases.push(item);            
+          rowItemsArrayPhrases.push(item);
         }
       }
 
       if (valid) {
-      validCount++
+        validCount++
       }
     }
 
     this.answer = validCount;
   }
-  
+
   private _rearrangeCheck(currentPhrase: string, newString: string): boolean {
     let currentCharArray = currentPhrase.split("");
     let newCharArray = newString.split("");

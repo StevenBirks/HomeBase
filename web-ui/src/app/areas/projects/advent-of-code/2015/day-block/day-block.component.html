@@ -3,6 +3,26 @@
     <section class="day-block-container col">
       <div class="day-title-container">
         <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(14).completedP1"></i>
+        </div>
+        <h2>14</h2>
+      </div>
+      <app-2015-day14></app-2015-day14>
+    </section>
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
+          <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(14).completedP2"></i>
+        </div>
+        <h2>14.5</h2>
+      </div>
+      <app-2015-day14-5></app-2015-day14-5>
+    </section>
+  </div>
+  <div class="row">
+    <section class="day-block-container col">
+      <div class="day-title-container">
+        <div class="icon-container" *ngIf="!loading">
           <i class="fa fa-star" aria-hidden="true" *ngIf="getStatusForDay(13).completedP1"></i>
         </div>
         <h2>13</h2>

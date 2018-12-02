@@ -65,7 +65,6 @@ export class Day7_5_2015Component implements OnInit {
       wire.outputValue = undefined;
     })
 
-    debugger;
 
     this._operations.find((operation) => {
       return operation.operator === Operator.VALUE &&

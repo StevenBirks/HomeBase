@@ -75,7 +75,6 @@ export class Day13Component implements OnInit {
         firewall.scannerPosition++;
         firewall.scannerDirection = "down";
       } else {
-        debugger;
         console.log("oh No! Scanner broke");
       }
     });

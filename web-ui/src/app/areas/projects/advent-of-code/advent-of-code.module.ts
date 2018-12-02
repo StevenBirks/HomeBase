@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AdventOfCodeService } from './advent-of-code.service';
+import { AdventOfCodeComponent } from './advent-of-code.component';
+import { AngularMaterialModule } from '../../../shared/angular-material/angular-material.module';
+import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from 'ngx-clipboard';
 import { DayBlockBaseComponent } from './day-block/day-block-base.component';
+// 2017
 import { DayBlock_2017Component } from './2017/day-block/day-block.component';
 import { Day10_5Component } from './2017/day10/day10-5.component';
 import { Day1Component } from './2017/day1/day1.component';
@@ -53,9 +58,8 @@ import { Day12_5Component } from './2017/day12/day12-5.component';
 import { Day12Component } from './2017/day12/day12.component';
 import { Day11_5Component } from './2017/day11/day11-5.component';
 import { Day11Component } from './2017/day11/day11.component';
-import { AngularMaterialModule } from '../../../shared/angular-material/angular-material.module';
-import { FormsModule } from '@angular/forms';
-import { ClipboardModule } from 'ngx-clipboard';
+
+// 2016
 import { DayBlock_2016Component } from './2016/day-block/day-block.component';
 import { Day1_2016Component } from './2016/day1/day1.component';
 import { Day1_5_2016Component } from './2016/day1/day1-5.component';
@@ -86,7 +90,8 @@ import { Day12_5_2015Component } from './2015/day12/day12-5.component';
 import { Day12_2015Component } from './2015/day12/day12.component';
 import { Day13_5_2015Component } from './2015/day13/day13-5.component';
 import { Day13_2015Component } from './2015/day13/day13.component';
-import { AdventOfCodeComponent } from './advent-of-code.component';
+import { Day14_5_2015Component } from './2015/day14/day14-5.component';
+import { Day14_2015Component } from './2015/day14/day14.component';
 
 // 2018
 import { DayBlock_2018Component } from './2018/day-block/day-block.component';
@@ -183,6 +188,8 @@ import { Day3_5_2018Component } from './2018/day3/day3-5.component';
     Day12_2015Component,
     Day13_5_2015Component,
     Day13_2015Component,
+    Day14_5_2015Component,
+    Day14_2015Component,
     //2018
     DayBlock_2018Component,
     Day1_2018Component,
