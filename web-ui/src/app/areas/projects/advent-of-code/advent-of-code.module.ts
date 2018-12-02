@@ -94,11 +94,14 @@ import { Day1_2018Component } from './2018/day1/day1.component';
 import { Day1_5_2018Component } from './2018/day1/day1-5.component';
 import { Day2_2018Component } from './2018/day2/day2.component';
 import { Day2_5_2018Component } from './2018/day2/day2-5.component';
+import { Day3_2018Component } from './2018/day3/day3.component';
+import { Day3_5_2018Component } from './2018/day3/day3-5.component';
 
 @NgModule({
   declarations: [
     AdventOfCodeComponent,
     DayBlockBaseComponent,
+    // 2017
     DayBlock_2017Component,
     Day1Component,
     Day1_5Component,
@@ -152,6 +155,7 @@ import { Day2_5_2018Component } from './2018/day2/day2-5.component';
     DayBlock_2016Component,
     Day1_2016Component,
     Day1_5_2016Component,
+    // 2015
     DayBlock_2015Component,
     Day1_2015Component,
     Day1_5_2015Component,
@@ -184,7 +188,9 @@ import { Day2_5_2018Component } from './2018/day2/day2-5.component';
     Day1_2018Component,
     Day1_5_2018Component,
     Day2_2018Component,
-    Day2_5_2018Component
+    Day2_5_2018Component,
+    Day3_2018Component,
+    Day3_5_2018Component,
     ],
   imports: [
       CommonModule,

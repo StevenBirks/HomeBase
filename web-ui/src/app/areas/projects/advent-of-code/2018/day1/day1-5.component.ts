@@ -43,7 +43,5 @@ export class Day1_5_2018Component implements OnInit {
         this._foundFrequencies.push(this.frequency);
       }
     }
-
-    console.log(this._foundFrequencies.length);
   }
 }

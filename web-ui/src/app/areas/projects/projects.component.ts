@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
       colour: "green",
       description: "advent of code stuffs",
       header: "Advent Of Code",
-      imageUrl: "url('../../../../assets/piano-opaque.png')",
+      imageUrl: "url('../../../../assets/aoc.png')",
       linkUrl: "advent-of-code"
     });
   }
