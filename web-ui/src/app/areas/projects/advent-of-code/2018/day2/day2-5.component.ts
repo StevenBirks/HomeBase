@@ -55,6 +55,4 @@ export class Day2_5_2018Component implements OnInit {
 
     return correctArray;
   }
-
-
 }
