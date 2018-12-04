@@ -228,7 +228,7 @@ namespace Api.Queries
             {
                 CompletedP1 = false,
                 CompletedP2 = false,
-                StartedP1 = false,
+                StartedP1 = true,
                 StartedP2 = false,
                 AdventDay = new AdventDayDto { Year = 2018, Day = 4 }
             });
