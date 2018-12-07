@@ -21,11 +21,8 @@ export class Day5_2018Component implements OnInit {
 
     while (this._currentRemovalCount > 0) {
       this.iterateRemoval();
-      console.log(this.inputString.length);
       this.answer = this.inputString.length;
     }
-
-
   }
 
   private iterateRemoval() {

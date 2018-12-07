@@ -105,6 +105,10 @@ import { Day4_2018Component } from './2018/day4/day4.component';
 import { Day4_5_2018Component } from './2018/day4/day4-5.component';
 import { Day5_2018Component } from './2018/day5/day5.component';
 import { Day5_5_2018Component } from './2018/day5/day5-5.component';
+import { Day6_2018Component } from './2018/day6/day6.component';
+import { Day6_5_2018Component } from './2018/day6/day6-5.component';
+import { Day7_2018Component } from './2018/day7/day7.component';
+import { Day7_5_2018Component } from './2018/day7/day7-5.component';
 
 @NgModule({
   declarations: [
@@ -206,6 +210,10 @@ import { Day5_5_2018Component } from './2018/day5/day5-5.component';
     Day4_5_2018Component,
     Day5_2018Component,
     Day5_5_2018Component,
+    Day6_2018Component,
+    Day6_5_2018Component,
+    Day7_2018Component,
+    Day7_5_2018Component
     ],
   imports: [
       CommonModule,
