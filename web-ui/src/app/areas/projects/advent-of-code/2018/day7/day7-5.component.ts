@@ -12,7 +12,6 @@ export class Day7_5_2018Component implements OnInit {
   private _steps: iStep[];
   private _stepOrder: string[];
   private _workers: iWorker[];
-  //private _stepDefs: iStepDef[];
   private _timeTaken: number;
 
   constructor() { }
@@ -24,7 +23,6 @@ export class Day7_5_2018Component implements OnInit {
     this._steps = new Array<iStep>();
     this._stepOrder = new Array<string>();
     this._workers = new Array<iWorker>();
-    //this._stepDefs = new Array<iStepDef>();
     this._timeTaken = 0;
 
     this.inputString.split("\n").forEach((row) => {
@@ -48,17 +46,6 @@ export class Day7_5_2018Component implements OnInit {
         })
       }
     });
-
-    // // initialise step defs
-    // let timeRequired = 61;
-
-    // for (let i = 65; i < 91; i++) {
-    //   this._stepDefs.push(<iStepDef> {
-    //     ref: String.fromCharCode(i),
-    //     timeRequired: timeRequired
-    //   })
-    //   timeRequired++;
-    // }
 
     // initialiase workers
     for (let i = 0; i < 5; i++) {
@@ -125,12 +112,9 @@ export class Day7_5_2018Component implements OnInit {
     this._workers.forEach((worker) => {
       if (worker.timeRemaining === 1) {
         worker.workingOn.completed = true;
-        console.log(`completed: ${worker.workingOn.ref}`);
-        console.log(this._timeTaken);
 
         if (this._stepOrder.indexOf(worker.workingOn.ref) === -1) {
           this._stepOrder.push(worker.workingOn.ref);
-          console.log(this._stepOrder);
         };
 
         worker.workingOn = <iStep>{
@@ -147,7 +131,6 @@ export class Day7_5_2018Component implements OnInit {
   }
 
   private farmStep(potentialStep: iStep) {
-    console.log(`attempt to start ${potentialStep.ref}`)
     const availableWorkers = this._workers.filter((worker) => {
       return worker.timeRemaining === 0;
     });
@@ -165,18 +148,9 @@ export class Day7_5_2018Component implements OnInit {
 
     if (workerWorkingOnStep.length === 0) {
       if (availableWorkers.length > 0) {
-        console.log(`starting step ${potentialStep.ref}`);
         availableWorkers[0].workingOn = potentialStep;
         availableWorkers[0].timeRemaining = potentialStep.ref.charCodeAt(0) - 4;
       }
-      else {
-        console.log(`${potentialStep.ref}:no workers free to work on it`);
-        console.log(this._workers);
-      }
-    }
-    else {
-      console.log(`${potentialStep.ref}: step already working on`);
-      console.log(this._workers);
     }
   }
 }
@@ -191,8 +165,3 @@ interface iWorker {
   timeRemaining: number,
   workingOn: iStep
 }
-
-// interface iStepDef {
-//   ref: string,
-//   timeRequired: number
-// }
