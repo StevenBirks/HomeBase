@@ -17,8 +17,8 @@ export class DayBlock_2017Component extends DayBlockBaseComponent {
   constructor(protected adventService: AdventOfCodeService) {
     super(adventService, 2017);
 
-    this.day1 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\src\\app\\areas\\projects\\advent-of-code\\powershell";
-    this.day13_5 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\src\\app\\areas\\projects\\advent-of-code\\powershell";
+    this.day1 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\web-ui\\src\\app\\areas\\projects\\advent-of-code\\2017\\powershell";
+    this.day13_5 = "F:\\Common\\Steve\\Programming\\Projects\\HomeBase\\web-ui\\src\\app\\areas\\projects\\advent-of-code\\2017\\powershell";
   }
 }
 

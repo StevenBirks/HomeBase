@@ -111,11 +111,16 @@ import { Day7_2018Component } from './2018/day7/day7.component';
 import { Day7_5_2018Component } from './2018/day7/day7-5.component';
 import { Day8_2018Component } from './2018/day8/day8.component';
 import { Day8_5_2018Component } from './2018/day8/day8-5.component';
+import { Day9_2018Component } from './2018/day9/day9.component';
+import { Day9_5_2018Component } from './2018/day9/day9-5.component';
+import { Day10_2018Component, AnswerDialogComponent } from './2018/day10/day10.component';
+import { Day10_5_2018Component } from './2018/day10/day10-5.component';
 
 @NgModule({
   declarations: [
     AdventOfCodeComponent,
     DayBlockBaseComponent,
+    AnswerDialogComponent,
     // 2017
     DayBlock_2017Component,
     Day1Component,
@@ -217,7 +222,11 @@ import { Day8_5_2018Component } from './2018/day8/day8-5.component';
     Day7_2018Component,
     Day7_5_2018Component,
     Day8_2018Component,
-    Day8_5_2018Component
+    Day8_5_2018Component,
+    Day9_2018Component,
+    Day9_5_2018Component,
+    Day10_2018Component,
+    Day10_5_2018Component
     ],
   imports: [
       CommonModule,
@@ -231,6 +240,9 @@ import { Day8_5_2018Component } from './2018/day8/day8-5.component';
   ],
   providers: [
     AdventOfCodeService
+  ],
+  entryComponents: [
+    AnswerDialogComponent
   ]
 })
 export class AdventOfCodeModule { }

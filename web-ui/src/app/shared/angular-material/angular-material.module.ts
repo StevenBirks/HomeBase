@@ -15,7 +15,8 @@ import {
   MatBadgeModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule
  } from '@angular/material';
 
 @NgModule({
@@ -33,7 +34,8 @@ import {
     MatBadgeModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   imports: [
     CommonModule
