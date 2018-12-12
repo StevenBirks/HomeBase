@@ -115,6 +115,12 @@ import { Day9_2018Component } from './2018/day9/day9.component';
 import { Day9_5_2018Component } from './2018/day9/day9-5.component';
 import { Day10_2018Component, AnswerDialogComponent } from './2018/day10/day10.component';
 import { Day10_5_2018Component } from './2018/day10/day10-5.component';
+import { Day11_2018Component } from './2018/day11/day11.component';
+import { Day11_5_2018Component } from './2018/day11/day11-5.component';
+import { Day12_2018Component } from './2018/day12/day12.component';
+import { Day12_5_2018Component } from './2018/day12/day12-5.component';
+import { Day13_2018Component } from './2018/day13/day13.component';
+import { Day13_5_2018Component } from './2018/day13/day13-5.component';
 
 @NgModule({
   declarations: [
@@ -226,7 +232,13 @@ import { Day10_5_2018Component } from './2018/day10/day10-5.component';
     Day9_2018Component,
     Day9_5_2018Component,
     Day10_2018Component,
-    Day10_5_2018Component
+    Day10_5_2018Component,
+    Day11_2018Component,
+    Day11_5_2018Component,
+    Day12_2018Component,
+    Day12_5_2018Component,
+    Day13_2018Component,
+    Day13_5_2018Component
     ],
   imports: [
       CommonModule,
