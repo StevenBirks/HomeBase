@@ -42,8 +42,6 @@ export class Day11_5_2018Component implements OnInit {
           this._maxFuelCell.y = this._fuelCells[i].y,
           this._maxFuelCell.power = power;
           this._maxFuelCell.size = gridSize;
-          console.log("max power: ", power);
-          console.log("GridSize:: ", gridSize);
           this.answer = `${this._maxFuelCell.x},${this._maxFuelCell.y},${this._maxFuelCell.size}`;
         }
       }
@@ -51,8 +49,6 @@ export class Day11_5_2018Component implements OnInit {
 
     if (gridSize < 301) {
       window.setTimeout(() => {
-        debugger;
-        console.log(gridSize);
         this.findGridRefMax(gridSize+1);
       }, 1)
     }
