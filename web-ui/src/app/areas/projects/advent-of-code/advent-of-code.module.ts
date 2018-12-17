@@ -123,6 +123,9 @@ import { Day13_2018Component } from './2018/day13/day13.component';
 import { Day13_5_2018Component } from './2018/day13/day13-5.component';
 import { Day14_2018Component } from './2018/day14/day14.component';
 import { Day14_5_2018Component } from './2018/day14/day14-5.component';
+import { Day15_2018Component } from './2018/day15/day15.component';
+import { Day15_5_2018Component } from './2018/day15/day15-5.component';
+import { GameDisplayComponent } from './2018/day15/game-display/game-display.component';
 
 @NgModule({
   declarations: [
@@ -242,7 +245,10 @@ import { Day14_5_2018Component } from './2018/day14/day14-5.component';
     Day13_2018Component,
     Day13_5_2018Component,
     Day14_2018Component,
-    Day14_5_2018Component
+    Day14_5_2018Component,
+    Day15_2018Component,
+    Day15_5_2018Component,
+    GameDisplayComponent
     ],
   imports: [
       CommonModule,
@@ -258,7 +264,8 @@ import { Day14_5_2018Component } from './2018/day14/day14-5.component';
     AdventOfCodeService
   ],
   entryComponents: [
-    AnswerDialogComponent
+    AnswerDialogComponent,
+    GameDisplayComponent
   ]
 })
 export class AdventOfCodeModule { }

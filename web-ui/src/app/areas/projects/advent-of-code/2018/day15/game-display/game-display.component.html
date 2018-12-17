@@ -1,0 +1,32 @@
+<div class="mat-typography container">
+  <div class="row">
+    <div class="game-board col">
+      <div *ngFor="let row of _caveRows">
+        <span>{{row}}</span>
+      </div>
+    </div>
+    <div class="combatants col">
+      <div class="combatants-title">Elf attack : {{ _elfAttack }}</div>
+      <div class="combatants-title">COMBATANTS</div>
+      <div class="container">
+        <div *ngFor="let combatant of _combatants">
+          <div class="row">
+            <div class="col-3">{{ combatant.type === 0 ? "E" : "G" }}</div>
+            <div class="col-6">{{ combatant.health }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="_displayVictory">
+          <div class="combatants-title">VICTORY</div>
+          <div>score: {{ _victory }}</div>
+          <div>{{ _victoryText }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button class="mat-accent mat-button" (click)="toggle()">{{ playPause }}</button>
+  <button mat-button class="mat-accent mat-button" (click)="iterate()">Iterate</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
