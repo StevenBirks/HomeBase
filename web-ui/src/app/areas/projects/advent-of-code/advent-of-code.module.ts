@@ -126,6 +126,8 @@ import { Day14_5_2018Component } from './2018/day14/day14-5.component';
 import { Day15_2018Component } from './2018/day15/day15.component';
 import { Day15_5_2018Component } from './2018/day15/day15-5.component';
 import { GameDisplayComponent } from './2018/day15/game-display/game-display.component';
+import { Day16_2018Component } from './2018/day16/day16.component';
+import { Day16_5_2018Component } from './2018/day16/day16-5.component';
 
 @NgModule({
   declarations: [
@@ -248,7 +250,9 @@ import { GameDisplayComponent } from './2018/day15/game-display/game-display.com
     Day14_5_2018Component,
     Day15_2018Component,
     Day15_5_2018Component,
-    GameDisplayComponent
+    GameDisplayComponent,
+    Day16_2018Component,
+    Day16_5_2018Component,
     ],
   imports: [
       CommonModule,
