@@ -12,7 +12,6 @@ export class Day16_5_2018Component implements OnInit {
   public answer: number;
 
   private _registers: number[];
-  private _matchingSampleCount: number;
   private _tests: iTest[];
   private _progLines: number[][];
 
@@ -38,7 +37,6 @@ export class Day16_5_2018Component implements OnInit {
     this._registers.push(0);
     this._registers.push(0);
     this._tests = new Array<iTest>();
-    this._matchingSampleCount = 0;
     this._opcodes = new Array<iOpcode>();
     this._progLines = new Array<Array<number>>();
 

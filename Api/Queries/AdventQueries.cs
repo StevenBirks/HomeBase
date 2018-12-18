@@ -314,25 +314,25 @@ namespace Api.Queries
             });
             adventDaysDto.Add(new AdventStatusDto
             {
-                CompletedP1 = false,
-                CompletedP2 = false,
+                CompletedP1 = true,
+                CompletedP2 = true,
                 StartedP1 = true,
-                StartedP2 = false,
+                StartedP2 = true,
                 AdventDay = new AdventDayDto { Year = 2018, Day = 15 }
             });
             adventDaysDto.Add(new AdventStatusDto
             {
-                CompletedP1 = false,
-                CompletedP2 = false,
-                StartedP1 = false,
-                StartedP2 = false,
+                CompletedP1 = true,
+                CompletedP2 = true,
+                StartedP1 = true,
+                StartedP2 = true,
                 AdventDay = new AdventDayDto { Year = 2018, Day = 16 }
             });
             adventDaysDto.Add(new AdventStatusDto
             {
                 CompletedP1 = false,
                 CompletedP2 = false,
-                StartedP1 = false,
+                StartedP1 = true,
                 StartedP2 = false,
                 AdventDay = new AdventDayDto { Year = 2018, Day = 17 }
             });
