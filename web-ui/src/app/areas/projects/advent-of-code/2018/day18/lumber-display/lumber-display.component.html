@@ -1,0 +1,21 @@
+<div class="mat-typography container">
+  <div class="row">
+    <div class="water-board col">
+      <div *ngFor="let row of _ground">
+        <span>{{ row }}</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>{{ _iteration }}</div>
+      <div *ngIf="_end">
+          <div class="end">END!</div>
+          <div>Answer: {{ _answer }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button class="mat-accent mat-button" (click)="toggle()">{{ playPause }}</button>
+  <button mat-button class="mat-accent mat-button" (click)="iterate()">Iterate</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
