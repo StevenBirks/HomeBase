@@ -330,7 +330,7 @@ namespace Api.Queries
             });
             adventDaysDto.Add(new AdventStatusDto
             {
-                CompletedP1 = false,
+                CompletedP1 = true,
                 CompletedP2 = false,
                 StartedP1 = true,
                 StartedP2 = false,
