@@ -1,11 +1,28 @@
 <div class="storage-label-container">
-<mat-form-field>
-    <input type="text" matInput placeholder="Label name" [(ngModel)]="inputLabel" (keyup.enter)="addLabelToList()">
-</mat-form-field>
-<button mat-button class="mat-accent" (click)="addLabelToList()">Add</button>
-<button id="print-container" mat-button class="mat-accent" (click)="printWindow()">Print list</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Label name" [(ngModel)]="inputLabelHeader" />
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Sub name" [(ngModel)]="inputLabelSub" (keyup.enter)="addLabelToList()" />
+                </mat-form-field>
+                <button mat-button class="mat-accent" (click)="addLabelToList()">Add</button>
+                <button id="print-container" mat-button class="mat-accent" (click)="printWindow()">Print list</button>
 
-<div *ngFor="let label of _labels">
-    <div>{{label}}</div>
-</div>
+                <div *ngFor="let label of _labels">
+                    <div>{{label}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="mock-label">
+                        <div class="header">{{ inputLabelHeader }}</div>
+                        <div class="sub">{{ inputLabelSub }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

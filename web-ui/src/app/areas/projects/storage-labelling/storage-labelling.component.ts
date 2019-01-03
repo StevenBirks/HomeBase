@@ -11,7 +11,8 @@ export class StorageLabellingComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  public inputLabel: string;
+  public inputLabelHeader: string;
+  public inputLabelSub: string;
 
   private _labels: string[];
   @ViewChild(LabelDisplayComponent) child: LabelDisplayComponent;
@@ -21,11 +22,12 @@ export class StorageLabellingComponent implements OnInit {
   }
 
   addLabelToList() {
-    if (this.inputLabel) {
-      this._labels.push(this.inputLabel);
+    if (this.inputLabelHeader) {
+      this._labels.push(`${this.inputLabelHeader} - ${this.inputLabelSub}`);
     }
     
-    this.inputLabel = null;
+    this.inputLabelHeader = null;
+    this.inputLabelSub = null;
   }
 
   printWindow() {
