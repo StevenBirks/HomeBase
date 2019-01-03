@@ -14,20 +14,44 @@ export class StorageLabellingComponent implements OnInit {
   public inputLabelHeader: string;
   public inputLabelSub: string;
 
-  private _labels: string[];
+  private _labels: storageLabel[];
+
   @ViewChild(LabelDisplayComponent) child: LabelDisplayComponent;
+  @ViewChild("labelHeader") headerField: ElementRef;
 
   ngOnInit() {
-    this._labels = new Array<string>();
+    this._labels = new Array<storageLabel>();
+  }
+
+  focusHeader() {
+    this.headerField.nativeElement.focus();
   }
 
   addLabelToList() {
     if (this.inputLabelHeader) {
-      this._labels.push(`${this.inputLabelHeader} - ${this.inputLabelSub}`);
+      this._labels.push(<storageLabel> {
+        header: this.inputLabelHeader,
+        subHeader: this.inputLabelSub
+      });
     }
     
     this.inputLabelHeader = null;
     this.inputLabelSub = null;
+    this.focusHeader();
+  }
+
+  editLabel(label: storageLabel) {
+    this.inputLabelHeader = label.header;
+    this.inputLabelSub = label.header;
+
+    this.focusHeader();
+    this.deleteLabel(label);
+  }
+
+  deleteLabel(label: storageLabel) {
+    const index = this._labels.indexOf(label);
+
+    this._labels.splice(index, 1);
   }
 
   printWindow() {
@@ -42,4 +66,9 @@ export class StorageLabellingComponent implements OnInit {
 
     this.child = dialogRef.componentInstance;
   }
+}
+
+export interface storageLabel {
+  header: string,
+  subHeader: string
 }

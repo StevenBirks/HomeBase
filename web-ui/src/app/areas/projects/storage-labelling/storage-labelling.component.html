@@ -3,16 +3,20 @@
         <div class="row">
             <div class="col">
                 <mat-form-field>
-                    <input type="text" matInput placeholder="Label name" [(ngModel)]="inputLabelHeader" />
+                    <input #labelHeader type="text" matInput placeholder="Label name" [(ngModel)]="inputLabelHeader" />
                 </mat-form-field>
                 <mat-form-field>
                     <input type="text" matInput placeholder="Sub name" [(ngModel)]="inputLabelSub" (keyup.enter)="addLabelToList()" />
                 </mat-form-field>
                 <button mat-button class="mat-accent" (click)="addLabelToList()">Add</button>
                 <button id="print-container" mat-button class="mat-accent" (click)="printWindow()">Print list</button>
-
-                <div *ngFor="let label of _labels">
-                    <div>{{label}}</div>
+                <div class="container">
+                    <div *ngFor="let label of _labels" class="row">
+                        <button type="button" class="col-1 mat-icon-button" (click)="deleteLabel(label)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <div class="col-11" (click)="editLabel(label)">{{ label.header }} - {{ label.subHeader }}</div>
+                    </div>
                 </div>
             </div>
             <div class="col">

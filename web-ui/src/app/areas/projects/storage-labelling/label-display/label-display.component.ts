@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PrintService } from '../../../../shared/print/print.service';
+import { storageLabel } from '../storage-labelling.component';
 
 @Component({
   selector: 'app-label-display',
@@ -8,11 +9,11 @@ import { PrintService } from '../../../../shared/print/print.service';
   styleUrls: ['./label-display.component.scss']
 })
 export class LabelDisplayComponent implements OnInit {
-  _labels: string[];
+  _labels: storageLabel[];
 
 
   constructor(private printService: PrintService, public dialogRef: MatDialogRef<LabelDisplayComponent>,
-    @Inject(MAT_DIALOG_DATA) data: { labels: string[] }) {
+    @Inject(MAT_DIALOG_DATA) data: { labels: storageLabel[] }) {
 
     this.updateValues(data.labels);
 
@@ -23,8 +24,8 @@ export class LabelDisplayComponent implements OnInit {
     }, 200);
   }
 
-  public updateValues(labels: string[]) {
-    this._labels = new Array<string>();
+  public updateValues(labels: storageLabel[]) {
+    this._labels = new Array<storageLabel>();
     labels.forEach((row) => {
       this._labels.push(row);
     });

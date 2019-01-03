@@ -15,4 +15,13 @@
     max-width: 8rem;
     overflow: hidden;
     word-wrap: break-word;
+
+    .label-header {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .label-sub-header {
+        font-weight: 600;
+    }
 }
