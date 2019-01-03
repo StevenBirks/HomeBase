@@ -1,22 +1,43 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { PrintService } from '../../../shared/print/print.service';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { LabelDisplayComponent } from './label-display/label-display.component';
 
 @Component({
   selector: 'app-storage-labelling',
   templateUrl: './storage-labelling.component.html',
-  styleUrls: ['./storage-labelling.component.css']
+  styleUrls: ['./storage-labelling.component.scss']
 })
 export class StorageLabellingComponent implements OnInit {
 
-  constructor(private printService: PrintService) { }
+  constructor(public dialog: MatDialog) { }
+
+  public inputLabel: string;
+
+  private _labels: string[];
+  @ViewChild(LabelDisplayComponent) child: LabelDisplayComponent;
 
   ngOnInit() {
+    this._labels = new Array<string>();
+  }
+
+  addLabelToList() {
+    if (this.inputLabel) {
+      this._labels.push(this.inputLabel);
+    }
+    
+    this.inputLabel = null;
   }
 
   printWindow() {
-    // This thing will need a modal panel to block other things from printing.
-    ////const elementToPrint: HTMLElement = document.querySelector('#printEl');
+    this.openDialog();
+  }
 
-    ////this.printService.print(elementToPrint);
+  private openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = { labels: this._labels };
+
+    const dialogRef = this.dialog.open(LabelDisplayComponent, dialogConfig);
+
+    this.child = dialogRef.componentInstance;
   }
 }

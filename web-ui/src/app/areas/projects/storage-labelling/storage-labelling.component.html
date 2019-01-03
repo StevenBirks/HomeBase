@@ -1,2 +1,11 @@
-<button id="print-container" mat-button class="mat-accent" (click)="printWindow()">Print something!</button>
-<div id="printEl">lkjhlkjh</div>
+<div class="storage-label-container">
+<mat-form-field>
+    <input type="text" matInput placeholder="Label name" [(ngModel)]="inputLabel" (keyup.enter)="addLabelToList()">
+</mat-form-field>
+<button mat-button class="mat-accent" (click)="addLabelToList()">Add</button>
+<button id="print-container" mat-button class="mat-accent" (click)="printWindow()">Print list</button>
+
+<div *ngFor="let label of _labels">
+    <div>{{label}}</div>
+</div>
+</div>
