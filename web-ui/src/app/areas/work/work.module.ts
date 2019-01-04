@@ -6,6 +6,7 @@ import { DesignComponent } from './design/design.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialDesignComponent } from './material-design/material-design.component';
 import { SharedModule } from '../../shared/shared.module';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
     { path: '', component: WorkComponent, pathMatch: 'full' }
@@ -16,6 +17,7 @@ const routes: Routes = [
     WorkComponent,
     DesignComponent,
     MaterialDesignComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,

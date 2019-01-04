@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">first data</div>
+    <div class="col" *ngFor="let value of firstFileData">{{ value }}</div>
+  </div>
+  <div class="row">
+    <div class="col">http data 1 get</div>
+    <div class="col" *ngFor="let value of firstHttpData">{{ value }}</div>
+  </div>
+  <div class="row">
+    <button id="eventButton" mat-button class="mat-accent col">Display data</button>
+    <div class="col"> {{ firstEventData }}</div>
+  </div>
+  <div class="row">
+    <div class="col">of</div>
+    <div class="col" *ngFor="let value of ofValues">{{ value }}</div>
+  </div>
+  <div class="row">
+    <div class="col">from</div>
+    <div class="col" *ngFor="let value of fromValues">{{ value }}</div>
+  </div>
+  <div class="row">
+    <div class="col">concat</div>
+    <div class="col" *ngFor="let value of concatValues">{{ value }}</div>
+  </div>
+  <div class="row">
+      <div class="col">Operators</div>
+      <div class="col" *ngFor="let value of operatorResults1">{{ value }}</div>
+    </div>
+    <div class="row">
+        <div class="col">Operators chained</div>
+        <div class="col" *ngFor="let value of shorthandPipes">{{ value }}</div>
+      </div>
+</div>
