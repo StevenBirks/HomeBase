@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   styleUrls: ['./lumber-display.component.scss']
 })
 export class Lumber201818DisplayComponent implements OnInit {
-  _ground: string[];
+  _ground: iGroundRow[];
   _iteration: number;
   _dropPointCount: number;
   playPause: string;
@@ -26,9 +26,11 @@ export class Lumber201818DisplayComponent implements OnInit {
   @Output() togglePause = new EventEmitter<any>();
 
   public updateValues(ground: string[][], iteration: number) {
-    this._ground = new Array<string>();
+    this._ground = new Array<iGroundRow>();
+    let id = 1;
     ground.forEach((row) => {
-        this._ground.push(row.join(""));
+        this._ground.push( { value: row.join(""), id: id });
+        id++;
     });
 
     this._iteration = iteration;
@@ -60,4 +62,9 @@ export class Lumber201818DisplayComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close();
   }
+}
+
+interface iGroundRow {
+  id: number,
+  value: string
 }

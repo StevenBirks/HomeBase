@@ -82,9 +82,9 @@ export class Day10_2018Component implements OnInit {
 
   private detectWord():boolean {
     for (let i = 0; i < this._points.length; i++) {
-      var posx = this._points[0].posX;
+      const posx = this._points[0].posX;
 
-      var count = this._points.filter((point) => {
+      const count = this._points.filter((point) => {
         return point.posX === posx;
       }).length;
 

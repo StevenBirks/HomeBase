@@ -1,15 +1,15 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Observable, of, from, fromEvent, concat } from 'rxjs';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Observable, of, from, fromEvent, concat, Subject } from 'rxjs';
 import { RxjsService } from './rxjs.service';
 import { firstData } from './rxjs.data';
-import { map, filter } from 'rxjs/operators';
+import { map, filter, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.scss']
 })
-export class RxjsComponent implements OnInit, AfterViewInit {
+export class RxjsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   rxjsService: RxjsService;
   firstHttpData: string[];
@@ -22,6 +22,8 @@ export class RxjsComponent implements OnInit, AfterViewInit {
   concatValues: any;
   operatorResults1: any;
   shorthandPipes: any;
+
+  private _destroyed$ = new Subject();
 
   constructor(rxjsService: RxjsService) {
     this.rxjsService = rxjsService;
@@ -53,12 +55,15 @@ export class RxjsComponent implements OnInit, AfterViewInit {
       }
     });
 
-    firstDataObservable$.subscribe((value) => {
-      this.firstFileData.push(value);
-    });
+    firstDataObservable$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((value) => {
+        this.firstFileData.push(value);
+      });
 
     // http
     this.rxjsService.getData1()
+      .pipe(takeUntil(this._destroyed$))
       .subscribe((data) => {
         this.firstHttpData = data;
       }, (error: any) => {
@@ -71,6 +76,7 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     let eventButton = document.getElementById('eventButton');
 
     fromEvent(eventButton, 'click')
+      .pipe(takeUntil(this._destroyed$))
       .subscribe((event) => {
         this.firstEventDataCount++;
         this.firstEventData = `Button click count: ${this.firstEventDataCount}`;
@@ -79,21 +85,27 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     // of
     let source1$ = of('hello', 10, true, firstData[0]);
 
-    source1$.subscribe((value) => {
-      this.ofValues.push(value);
-    })
+    source1$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((value) => {
+        this.ofValues.push(value);
+      })
 
     // from 
     let source2$ = from(firstData);
 
-    source2$.subscribe((value) => {
-      this.fromValues.push(value);
-    });
+    source2$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((value) => {
+        this.fromValues.push(value);
+      });
 
     // concat
-    concat(source1$, source2$).subscribe((value) => {
-      this.concatValues.push(value);
-    });
+    concat(source1$, source2$)
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((value) => {
+        this.concatValues.push(value);
+      });
 
     // subscribing with an observer
     let myObserver = {
@@ -103,7 +115,9 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     };
 
     let sourceObservable$ = of(1, 1, 2, 3, 5, 8, 13);
-    sourceObservable$.subscribe(myObserver);
+    sourceObservable$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe(myObserver);
   }
 
   beginOperatoring() {
@@ -112,17 +126,25 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     let doubler = map((value: number) => value * 2);
     let doubled$ = doubler(source$);
 
-    doubled$.subscribe((value:number) => {
+    doubled$
+    .pipe(takeUntil(this._destroyed$))
+    .subscribe((value: number) => {
       this.operatorResults1.push(value);
     });
 
     // shorthand
     source$.pipe(
       map(value => value * 2),
-      filter(mappedValue => mappedValue > 5)
+      filter(mappedValue => mappedValue > 5),
+      takeUntil(this._destroyed$)
     )
-    .subscribe(
-      finalValue => this.shorthandPipes.push(finalValue)
-    )
+      .subscribe(
+        finalValue => this.shorthandPipes.push(finalValue)
+      )
+  }
+
+  public ngOnDestroy(): void {
+    this._destroyed$.next();
+    this._destroyed$.complete();
   }
 }

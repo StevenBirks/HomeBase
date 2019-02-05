@@ -23,7 +23,7 @@ export class Day21_5Component implements OnInit {
     this._pattern.push(".#.");
     this._pattern.push("..#");
     this._pattern.push("###");
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
 
     for (const row of rowsString) {
       const newRule = <iRule>{

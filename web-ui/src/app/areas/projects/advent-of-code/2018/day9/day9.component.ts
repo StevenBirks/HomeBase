@@ -102,7 +102,7 @@ export class Day9_2018Component implements OnInit {
   }
 
   private findMaxPlayerScore(): number {
-    var highestScore = 0;
+    let highestScore = 0;
 
     this._players.forEach((player) => {
       if (player.score > highestScore) {

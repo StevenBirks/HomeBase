@@ -493,6 +493,7 @@ export class Day15_2018Component implements OnInit {
 
     let x = -1;
     let y = -1;
+    let id = 1;
     this.inputString.split("\n").forEach((row) => {
       y++;
       x = -1;
@@ -502,11 +503,14 @@ export class Day15_2018Component implements OnInit {
         x++
         if (cell === "E" || cell === "G") {
           this._combatants.push(<iCombatant>{
+            id: id,
             health: 200,
             type: cell === "E" ? type.elf : type.goblin,
             x: x,
             y: y
-          })
+          });
+
+          id++
         }
 
         newRow.push(cell);
@@ -534,6 +538,7 @@ export class Day15_2018Component implements OnInit {
 }
 
 export interface iCombatant {
+  id: number,
   type: type,
   health: number,
   x: number,

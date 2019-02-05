@@ -47,8 +47,8 @@ export class Day8_2018Component implements OnInit {
   }
 
   private iterateNode(i: number): number {
-    var steps = 0;
-    var newNode = <iNode>{
+    let steps = 0;
+    const newNode = <iNode>{
       childNodeCount: this._inputArray[i],
       childNodesRemaining: this._inputArray[i],
       metaData: new Array<number>(),

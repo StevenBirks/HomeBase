@@ -27,7 +27,7 @@ export class Day11_2018Component implements OnInit {
   }
 
   private findGridRefMax(): string {
-    var maxFuelCell = <iFuelCell> {
+    const maxFuelCell = <iFuelCell> {
       power: 0,
       x: 0, 
       y: 0
@@ -65,9 +65,9 @@ export class Day11_2018Component implements OnInit {
       cell.power = (rackId * cell.y)
       cell.power += this.inputNumber;
       cell.power *= rackId;
-      var l = Math.pow(10, Math.floor(Math.log(cell.power)/Math.log(10))-(cell.power.toString().length - 3));
-      var b = Math.floor(cell.power/l);
-      var digit = b-Math.floor(b/10)*10;
+      const l = Math.pow(10, Math.floor(Math.log(cell.power)/Math.log(10))-(cell.power.toString().length - 3));
+      const b = Math.floor(cell.power/l);
+      const digit = b-Math.floor(b/10)*10;
       cell.power = digit -5;
     })
   }

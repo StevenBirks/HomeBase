@@ -21,7 +21,7 @@ export class Day3_5Component implements OnInit {
     this._matrix = new Array<Array<number>>();
     for(let i = 0; i < 20; i++) {
       this._matrix[i] = [];
-      for(var j = 0; j < 20; j++) {
+      for(let j = 0; j < 20; j++) {
           this._matrix[i][j] = 0;
       }
     }
