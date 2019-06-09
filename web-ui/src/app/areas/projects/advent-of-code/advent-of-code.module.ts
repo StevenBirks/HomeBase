@@ -134,6 +134,8 @@ import { WaterDisplayComponent } from './2018/day17/water-display/water-display.
 import { Lumber201818DisplayComponent } from './2018/day18/lumber-display/lumber-display.component';
 import { Day18_2018Component } from './2018/day18/day18.component';
 import { Day18_5_2018Component } from './2018/day18/day18-5.component';
+import { Day19_2018Component } from './2018/day19/day19.component';
+import { Day19_5_2018Component } from './2018/day19/day19-5.component';
 
 @NgModule({
   declarations: [
@@ -264,7 +266,9 @@ import { Day18_5_2018Component } from './2018/day18/day18-5.component';
     WaterDisplayComponent,
     Day18_2018Component,
     Day18_5_2018Component,
-    Lumber201818DisplayComponent
+    Lumber201818DisplayComponent,
+    Day19_2018Component,
+    Day19_5_2018Component,
     ],
   imports: [
       CommonModule,
