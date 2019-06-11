@@ -1,0 +1,79 @@
+<div class="container p-3">
+  <div class="row">
+    <div class="col violin-row-spacing">
+      <div class="row">Open Strings</div>
+      <div class="row"></div>
+      <div class="row">1st Finger</div>
+      <div class="row"></div>
+      <div class="row">2nd Finger</div>
+      <div class="row">3rd Finger</div>
+      <div class="row"></div>
+      <div class="row">4th Finger</div>
+      <div class="row"></div>
+    </div>
+    <div class="col violin-row-spacing">
+      <div class="row notes standard-finger open-strings">
+        <div [class.in-key]="noteInKey(['g'])">G</div>
+        <div [class.in-key]="noteInKey(['d'])">D</div>
+        <div [class.in-key]="noteInKey(['a'])">A</div>
+        <div [class.in-key]="noteInKey(['e', 'fb'])">E</div>
+      </div>
+      <div class="row notes extended-finger">
+        <div [class.in-key]="noteInKey(['g#', 'ab'])">Ab</div>
+        <div [class.in-key]="noteInKey(['d#', 'eb'])">Eb</div>
+        <div [class.in-key]="noteInKey(['a#', 'bb'])">Bb</div>
+        <div [class.in-key]="noteInKey(['e#', 'f'])">F</div>
+      </div>     
+      <div class="row notes standard-finger">
+        <div [class.in-key]="noteInKey(['a'])">A</div>
+        <div [class.in-key]="noteInKey(['e', 'fb'])">E</div>
+        <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
+        <div [class.in-key]="noteInKey(['a#', 'gb'])">Gb</div>
+      </div>
+      <div class="row notes extended-finger">
+        <div [class.in-key]="noteInKey(['a#', 'bb'])">Bb</div>
+        <div [class.in-key]="noteInKey(['e#', 'f'])">F</div>
+        <div [class.in-key]="noteInKey(['b#', 'c'])">C</div>
+        <div [class.in-key]="noteInKey(['g'])">G</div>
+      </div>
+      <div class="row notes standard-finger">
+        <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
+        <div [class.in-key]="noteInKey(['a#', 'gb'])">Gb</div>
+        <div [class.in-key]="noteInKey(['c#', 'db'])">Db</div>
+        <div [class.in-key]="noteInKey(['g#', 'ab'])">Ab</div>
+      </div>
+      <div class="row notes standard-finger">
+        <div [class.in-key]="noteInKey(['b#', 'c'])">C</div>
+        <div [class.in-key]="noteInKey(['g'])">G</div>
+        <div [class.in-key]="noteInKey(['d'])">D</div>
+        <div [class.in-key]="noteInKey(['a'])">A</div>
+      </div>
+      <div class="row notes extended-finger">
+        <div [class.in-key]="noteInKey(['c#', 'db'])">Db</div>
+        <div [class.in-key]="noteInKey(['g#', 'ab'])">Ab</div>
+        <div [class.in-key]="noteInKey(['d#', 'eb'])">Eb</div>
+        <div [class.in-key]="noteInKey(['a#', 'bb'])">Bb</div>
+      </div>
+      <div class="row notes standard-finger">
+        <div [class.in-key]="noteInKey(['d'])">D</div>
+        <div [class.in-key]="noteInKey(['a'])">A</div>
+        <div [class.in-key]="noteInKey(['e', 'fb'])">E</div>
+        <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
+      </div>
+      <div class="row notes extended-finger">
+        <div [class.in-key]="noteInKey(['eb'])">Eb</div>
+        <div [class.in-key]="noteInKey(['bb'])">Bb</div>
+        <div [class.in-key]="noteInKey(['e#', 'f'])">F</div>
+        <div [class.in-key]="noteInKey(['b#', 'c'])">C</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">Key</div>
+      <div class="row">
+        <button mat-raised-button color="primary" (click)="setKey('c')">C</button>
+        <button mat-raised-button color="primary" (click)="setKey('c#')">C# / Db</button>
+        <button mat-raised-button color="primary" (click)="setKey('d')">D</button>
+      </div>
+    </div>
+  </div>
+</div>

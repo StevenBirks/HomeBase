@@ -1,0 +1,55 @@
+.violin-row-spacing {
+    .row {
+        height: 4rem;
+    }
+}
+
+.notes {
+    width: 20rem;
+    
+    &.standard-finger {
+        background-image: url('../../../../../assets/single-line--black.svg');
+        background-repeat: repeat-x;
+        background-position-y: center;
+
+
+        &.open-strings {
+            background-image: url('../../../../../assets/double-line--black.svg');
+        }
+    }
+
+    div {
+        border: solid #000 2px;
+        height: 3rem;
+        width:  3rem;
+        line-height: 3rem;
+        text-align: center; 
+        background-color: #fff;
+        margin: 0.5rem 1rem 0.5rem 1rem; 
+        position: relative;
+
+        &.in-key {
+            background-color: gold;
+        }
+
+        &::before {
+            content: '';
+            background-repeat: repeat-y;
+            background-position-x: center;
+            background-image: url('../../../../../assets/single-line--vertical--black.svg');
+            top: 2px;
+            left: -1.125rem;
+            height: 4rem;
+            width: 5rem;
+            position: absolute;
+            z-index: -1;
+        }  
+    }
+
+    &.extended-finger {
+        div {
+            border-radius: 1.5rem;
+        }
+    }
+
+}

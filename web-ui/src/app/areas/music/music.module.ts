@@ -9,6 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { DrumsComponent } from './drums/drums.component';
 import { ViolinComponent } from './violin/violin.component';
+import { ViolinScalesComponent } from './violin/violin-scales/violin-scales.component';
 
 const routes: Routes = [
   { path: '', component: MusicComponent, pathMatch: 'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
     PianoComponent,
     GuitarComponent,
     DrumsComponent,
-    ViolinComponent
+    ViolinComponent,
+    ViolinScalesComponent
     ],
   imports: [
     AngularMaterialModule,
