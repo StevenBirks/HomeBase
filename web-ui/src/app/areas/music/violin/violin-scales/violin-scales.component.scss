@@ -4,6 +4,30 @@
     }
 }
 
+.music-key-buttons {
+    button {
+        margin: 0.5rem;
+    }
+}
+
+.key-title {
+    margin-top: 2rem;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+}
+
+#key-image {
+    height: 10rem;
+    width: 10rem;
+    //background-image: url('../../../../../assets/keys/c-major.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .notes {
     width: 20rem;
     
@@ -51,5 +75,52 @@
             border-radius: 1.5rem;
         }
     }
+}
 
+$keylist: 'c' 'c#' 'db' 'd' 'eb' 'e' 'f' 'f#''gb' 'g' 'ab' 'a' 'bb' 'b';
+
+.key-cb  {
+    background-image: url('../../../../../assets/keys/c-flat-major_a-flat-minor.png');
+}
+.key-c  {
+    background-image: url('../../../../../assets/keys/c-major.png');
+}
+.key-c-sharp  {
+        background-image: url('../../../../../assets/keys/c-sharp-major_a-sharp-minor.png');
+}
+.key-db  {
+    background-image: url('../../../../../assets/keys/d-flat-major_b-flat-minor.png');
+}
+.key-d  {
+    background-image: url('../../../../../assets/keys/d-major.png');
+}
+.key-eb  {
+    background-image: url('../../../../../assets/keys/e-flat-major_c-minor.png');
+}
+.key-e  {
+    background-image: url('../../../../../assets/keys/e-major_c-sharp-minor.png');
+}
+.key-f  {
+    background-image: url('../../../../../assets/keys/f-major_d-minor.png');
+}
+.key-f-sharp  {
+    background-image: url('../../../../../assets/keys/f-sharp-major_d-sharp-minor.png');
+}
+.key-gb  {
+    background-image: url('../../../../../assets/keys/g-flat-major_e-flat-minor.png');
+} 
+.key-g  {
+    background-image: url('../../../../../assets/keys/g-major_e-minor.png');
+}
+.key-ab  {
+    background-image: url('../../../../../assets/keys/a-flat-major_f-minor.png');
+}
+.key-a  {
+    background-image: url('../../../../../assets/keys/a-major_f-sharp-minor.png');
+}
+.key-bb  {
+    background-image: url('../../../../../assets/keys/b-flat-major_g-minor.png');
+}
+.key-b  {
+    background-image: url('../../../../../assets/keys/b-major_g-sharp-minor.png');
 }

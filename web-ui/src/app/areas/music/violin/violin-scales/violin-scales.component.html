@@ -1,6 +1,6 @@
 <div class="container p-3">
   <div class="row">
-    <div class="col violin-row-spacing">
+    <div class="col-2 mt-3 violin-row-spacing">
       <div class="row">Open Strings</div>
       <div class="row"></div>
       <div class="row">1st Finger</div>
@@ -28,7 +28,7 @@
         <div [class.in-key]="noteInKey(['a'])">A</div>
         <div [class.in-key]="noteInKey(['e', 'fb'])">E</div>
         <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
-        <div [class.in-key]="noteInKey(['a#', 'gb'])">Gb</div>
+        <div [class.in-key]="noteInKey(['f#', 'gb'])">Gb</div>
       </div>
       <div class="row notes extended-finger">
         <div [class.in-key]="noteInKey(['a#', 'bb'])">Bb</div>
@@ -38,7 +38,7 @@
       </div>
       <div class="row notes standard-finger">
         <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
-        <div [class.in-key]="noteInKey(['a#', 'gb'])">Gb</div>
+        <div [class.in-key]="noteInKey(['f#', 'gb'])">Gb</div>
         <div [class.in-key]="noteInKey(['c#', 'db'])">Db</div>
         <div [class.in-key]="noteInKey(['g#', 'ab'])">Ab</div>
       </div>
@@ -61,18 +61,32 @@
         <div [class.in-key]="noteInKey(['b', 'cb'])">B</div>
       </div>
       <div class="row notes extended-finger">
-        <div [class.in-key]="noteInKey(['eb'])">Eb</div>
-        <div [class.in-key]="noteInKey(['bb'])">Bb</div>
+        <div [class.in-key]="noteInKey(['eb, f'])">Eb</div>
+        <div [class.in-key]="noteInKey(['a#, bb'])">Bb</div>
         <div [class.in-key]="noteInKey(['e#', 'f'])">F</div>
         <div [class.in-key]="noteInKey(['b#', 'c'])">C</div>
       </div>
     </div>
     <div class="col">
-      <div class="row">Key</div>
-      <div class="row">
+      <div class="row music-key-buttons d-flex flex-wrap justify-content-center align-content-start align-items-start">
         <button mat-raised-button color="primary" (click)="setKey('c')">C</button>
-        <button mat-raised-button color="primary" (click)="setKey('c#')">C# / Db</button>
+        <button mat-raised-button color="primary" (click)="setKey('c#')">C#</button>
+        <button mat-raised-button color="primary" (click)="setKey('db')">Db</button>
         <button mat-raised-button color="primary" (click)="setKey('d')">D</button>
+        <button mat-raised-button color="primary" (click)="setKey('eb')">Eb</button>
+        <button mat-raised-button color="primary" (click)="setKey('e')">E</button>
+        <button mat-raised-button color="primary" (click)="setKey('f')">F </button>
+        <button mat-raised-button color="primary" (click)="setKey('f#')">F#</button>
+        <button mat-raised-button color="primary" (click)="setKey('gb')">Gb</button>
+        <button mat-raised-button color="primary" (click)="setKey('g')">G</button>
+        <button mat-raised-button color="primary" (click)="setKey('ab')">Ab</button>
+        <button mat-raised-button color="primary" (click)="setKey('a')">A</button>
+        <button mat-raised-button color="primary" (click)="setKey('bb')">Bb</button>
+        <button mat-raised-button color="primary" (click)="setKey('b')">B</button>
+      </div>
+      <div class="row key-title">Key: {{ _key | titlecase }}</div>
+      <div class="row">
+        <div id="key-image" class="key-c"></div>
       </div>
     </div>
   </div>
