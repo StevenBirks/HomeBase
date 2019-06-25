@@ -8,27 +8,25 @@ import { Component, OnInit } from '@angular/core';
 
 export class ViolinScalesComponent implements OnInit {
   private _key: string;
-  private keys: MusicKey[];
+  private readonly keys: MusicKey[] = [
+  { key: "c", notes: ["c", "d", "e", "f", "g", "a", "b"] },
+  { key: "c#", notes: ["c#", "d#", "e#", "f#", "g#", "a#", "b#"] },
+  { key: "db", notes: ["c", "db", "eb", "f", "gb", "ab", "bb"] },
+  { key: "d", notes: ["c#", "d", "e", "f#", "g", "a", "b"] },
+  { key: "eb", notes: ["c", "d", "eb", "f", "g", "ab", "bb"] },
+  { key: "e", notes: ["c#", "d#", "e", "f#", "g#", "a", "b"] },
+  { key: "f", notes: ["c", "d", "e", "f", "g", "a", "bb"] },
+  { key: "f#", notes: ["c#", "d#", "e#", "f#", "g#", "a#", "b"] },
+  { key: "gb", notes: ["cb", "db", "eb", "f", "gb", "ab", "bb"] },
+  { key: "g", notes: ["c", "d", "e", "f#", "g", "a", "b"] },
+  { key: "ab", notes: ["c", "db", "eb", "f", "g", "ab", "bb"] },
+  { key: "a", notes: ["c#", "d", "e", "f#", "g#", "a", "b"] },
+  { key: "bb", notes: ["c", "d", "eb", "f", "g", "a", "bb"] },
+  { key: "b", notes: ["c#", "d#", "e", "f#", "g#", "a#", "b"] }];
 
   constructor() { }
 
   ngOnInit() {
-    this.keys = new Array<MusicKey>();
-    this.keys.push({ key: "c", notes: ["c", "d", "e", "f", "g", "a", "b"] });
-    this.keys.push({ key: "c#", notes: ["c#", "d#", "e#", "f#", "g#", "a#", "b#"] });
-    this.keys.push({ key: "db", notes: ["c", "db", "eb", "f", "gb", "ab", "bb"] });
-    this.keys.push({ key: "d", notes: ["c#", "d", "e", "f#", "g", "a", "b"] });
-    this.keys.push({ key: "eb", notes: ["c", "d", "eb", "f", "g", "ab", "bb"] });
-    this.keys.push({ key: "e", notes: ["c#", "d#", "e", "f#", "g#", "a", "b"] });
-    this.keys.push({ key: "f", notes: ["c", "d", "e", "f", "g", "a", "bb"] });
-    this.keys.push({ key: "f#", notes: ["c#", "d#", "e#", "f#", "g#", "a#", "b"] });
-    this.keys.push({ key: "gb", notes: ["cb", "db", "eb", "f", "gb", "ab", "bb"] });
-    this.keys.push({ key: "g", notes: ["c", "d", "e", "f#", "g", "a", "b"] });
-    this.keys.push({ key: "ab", notes: ["c", "db", "eb", "f", "g", "ab", "bb"] });
-    this.keys.push({ key: "a", notes: ["c#", "d", "e", "f#", "g#", "a", "b"] });
-    this.keys.push({ key: "bb", notes: ["c", "d", "eb", "f", "g", "a", "bb"] });
-    this.keys.push({ key: "b", notes: ["c#", "d#", "e", "f#", "g#", "a#", "b"] });
-
     this.setKey('c');
   }
 
@@ -43,7 +41,6 @@ export class ViolinScalesComponent implements OnInit {
       element.classList.add(`key-${className}`);
     }
   };
-
 
   public noteInKey(notes: string[]): boolean {
     const notesInCurrentKey = this.keys.find(o => o.key === this._key).notes;
