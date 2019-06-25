@@ -9,7 +9,7 @@
       <div class="combatants-title">Elf attack : {{ _elfAttack }}</div>
       <div class="combatants-title">COMBATANTS</div>
       <div class="container">
-        <div *ngFor="let combatant of _combatants">
+        <div *ngFor="let combatant of _combatants; trackBy: trackByFn">
           <div class="row">
             <div class="col-3">{{ combatant.type === 0 ? "E" : "G" }}</div>
             <div class="col-6">{{ combatant.health }}</div>

@@ -51,7 +51,7 @@ export class Day2_2018Component implements OnInit {
   }
 
   private CheckCountOfLetter(letter: string, codeArray: string[], count: number): boolean {
-    var foundCount = 0;
+    let foundCount = 0;
 
     for (let i = 0; i < codeArray.length; i++) {
       if (letter === codeArray[i]) {

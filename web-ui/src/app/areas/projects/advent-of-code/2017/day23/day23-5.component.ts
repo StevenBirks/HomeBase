@@ -69,7 +69,7 @@ export class Day23_5Component implements OnInit {
   }
 
   private _isPrime(value: number) {
-      for(var i = 2; i < value; i++) {
+      for(let i = 2; i < value; i++) {
           if(value % i === 0) {
               return false;
           }

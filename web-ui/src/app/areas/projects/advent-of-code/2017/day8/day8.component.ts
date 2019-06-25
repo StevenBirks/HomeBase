@@ -17,7 +17,7 @@ export class Day8Component implements OnInit {
   }
 
   public calculate(): void {
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
     this._registers = new Array<iRegister>();
     this._instructions = new Array<iInstruction>();
     

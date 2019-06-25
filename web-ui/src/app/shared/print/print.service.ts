@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PrintService {
 
-public print(printEl: HTMLElement) {
+public print() {
     window.print();
   }
 }

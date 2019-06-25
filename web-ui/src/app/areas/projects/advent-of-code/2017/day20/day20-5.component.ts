@@ -19,7 +19,7 @@ export class Day20_5Component implements OnInit {
 
   public calculate(): void {
     this._particles = new Array<iParticle>();
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
 
     for (const row of rowsString) {
       let rowItemsArrayString = row.split(", ");

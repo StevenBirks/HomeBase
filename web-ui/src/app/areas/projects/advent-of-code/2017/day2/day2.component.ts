@@ -14,7 +14,7 @@ export class Day2Component implements OnInit {
   }
 
   public calculate(): void {
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
     let checkSum = 0;
 
     for (const row of rowsString) {

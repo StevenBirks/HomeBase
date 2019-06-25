@@ -1,0 +1,27 @@
+.storage-label-container {
+    padding: 2rem;
+}
+
+.mat-form-field {
+    display: flex;
+}
+
+.mock-label {
+    border: 3px dashed black;
+    border-radius: 6px;
+    height: 12rem;
+    width: 40rem;
+    padding: 1rem;
+
+    .header {
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: 600;
+    }
+
+    .sub {
+        font-size: 48px;
+        line-height: 4rem;
+        font-weight: 400;
+    }
+}

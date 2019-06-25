@@ -21,7 +21,7 @@ export class Day22Component implements OnInit {
   
 
   public calculate(): void {
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
     this._grid = new Array<Array<string>>();
 
     for (let i = 0; i < 1001; i++) {

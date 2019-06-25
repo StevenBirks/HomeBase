@@ -30,6 +30,7 @@ export class MusicComponent implements OnInit {
 
   addPianoTile() {
     this.musicTileService.addTile(<iTile>{
+      id: 1,
       colour: "rgba(82, 79, 252, 0.4)",
       description: "piano stuffs",
       header: "Piano",
@@ -40,6 +41,7 @@ export class MusicComponent implements OnInit {
 
   addGuitarTile() {
     this.musicTileService.addTile(<iTile>{
+      id: 2,
       colour: "yellow",
       description: "guitar stuffs",
       header: "Guitar",
@@ -50,6 +52,7 @@ export class MusicComponent implements OnInit {
 
   addDrumsTile() {
     this.musicTileService.addTile(<iTile>{
+      id: 3,
       colour: "red",
       description: "drums stuffs",
       header: "Drums",
@@ -60,11 +63,16 @@ export class MusicComponent implements OnInit {
 
   addViolinTile() {
     this.musicTileService.addTile(<iTile>{
+      id: 4,
       colour: "green",
       description: "violin stuffs",
       header: "Violin",
       imageUrl: "url('../../../../assets/violin-opaque.png')",
       linkUrl: "violin"
     });
-  }  
+  } 
+  
+  trackByFn(index, item) {    
+    return item.id;
+ }
 }

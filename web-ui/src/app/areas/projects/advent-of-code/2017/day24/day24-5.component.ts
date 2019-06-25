@@ -21,7 +21,7 @@ export class Day24_5Component implements OnInit {
   }
 
   public calculate(): void {
-    var rowsString = this.inputString.split("\n");
+    const rowsString = this.inputString.split("\n");
     let checkSum = 0;
     this._components = new Array<iComponent>();
     this._bridges = new Array<iBridge>();

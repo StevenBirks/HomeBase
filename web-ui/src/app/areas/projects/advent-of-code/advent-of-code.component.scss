@@ -1,3 +1,7 @@
+::ng-deep.mat-tab-body-content {
+    max-height: calc(100% - 6rem);
+}
+
 ::ng-deep.day-block-container {
     background-color: rgba(242, 242, 242, 0.9);
     border-radius: 0.5rem;

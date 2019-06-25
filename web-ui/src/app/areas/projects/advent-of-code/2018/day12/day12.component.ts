@@ -106,7 +106,7 @@ export class Day12_2018Component implements OnInit {
     potArray = `...${potsTemp[0]}${potsTemp[1]}`;
     validRule = this.findRule(potArray);
 
-    var prevsliced = false;
+    let prevsliced = false;
 
     if (validRule.result === '#') {
       this._pots.unshift(validRule.result);

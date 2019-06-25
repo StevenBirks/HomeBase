@@ -20,7 +20,7 @@ export class Day6_5_2018Component implements OnInit {
     this._coordinates = new Array<iCoordinate>();
     this._locationArray = new Array<Array<number>>();
 
-    var ref = 0;
+    let ref = 0;
 
     this.inputString.split("\n").forEach((row) => {
 
@@ -55,7 +55,8 @@ export class Day6_5_2018Component implements OnInit {
   }
 
   private isCoordinateValid(x: number, y: number) {
-    var totalDistance = 0;
+    let totalDistance = 0;
+    
     for (let i = 0; i < this._coordinates.length; i++) {
       const locX = Math.abs(this._coordinates[i].x - x);
       const locY = Math.abs(this._coordinates[i].y - y);
@@ -69,7 +70,7 @@ export class Day6_5_2018Component implements OnInit {
   }
 
   private countZeros(): number {
-    var count = 0;
+    let count = 0;
     for (let i = 0; i < 500; i++) {
       for (let j = 0; j < 500; j++) {
         if (this._locationArray[i][j] === 0) {

@@ -8,6 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdventOfCodeComponent } from './advent-of-code/advent-of-code.component';
 import { AdventOfCodeModule } from './advent-of-code/advent-of-code.module';
 import { StorageLabellingComponent } from './storage-labelling/storage-labelling.component';
+import { LabelDisplayComponent } from './storage-labelling/label-display/label-display.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: ProjectsComponent, pathMatch: 'full' },
@@ -18,19 +20,24 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectsComponent,
-    StorageLabellingComponent
+    StorageLabellingComponent,
+    LabelDisplayComponent
     ],
   imports: [
     AngularMaterialModule,
     CommonModule,
     SharedModule,
     AdventOfCodeModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [
   ],
   providers: [
     ProjectsTilesService
+  ],
+  entryComponents: [
+    LabelDisplayComponent
   ]
 })
 export class ProjectsModule { }

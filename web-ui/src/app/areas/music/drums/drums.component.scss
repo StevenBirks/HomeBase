@@ -1,7 +1,6 @@
 .drums-container {
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 4rem - 6px);
     background-image:  url('../../../../assets/drums-large.png');
     background-position: bottom right;
     background-size: 300px;
-    overflow-y: scroll;
 }

@@ -1,5 +1,5 @@
 <div class="tile-container"> 
-    <div class="tile-wrapper" *ngFor="let tile of tiles">
+    <div class="tile-wrapper" *ngFor="let tile of tiles; trackBy: trackByFn" >
         <app-tile [tile]="tile"></app-tile>            
     </div>
 </div>

@@ -1,8 +1,8 @@
 <div class="mat-typography container">
   <div class="row">
     <div class="water-board col">
-      <div *ngFor="let row of _ground">
-        <span>{{ row }}</span>
+      <div *ngFor="let row of _ground; trackBy: trackByFn">
+        <span>{{ row.value }}</span>
       </div>
     </div>
     <div class="col">
