@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AdventOfCodeService } from '../advent-of-code.service';
+//import { AdventOfCodeService } from '../advent-of-code.service';
 import { AdventStatusDto } from '../advent-status.dto';
+import { AdventClient } from '../../../../../generated/web.api';
 
 @Component({
   selector: 'base-day-block',
@@ -9,16 +10,16 @@ import { AdventStatusDto } from '../advent-status.dto';
 })
 export class DayBlockBaseComponent  {
 
-  constructor(adventService: AdventOfCodeService, year: number) {
+  constructor(adventClient: AdventClient, year: number) {
     this.year = year;
     this.adventStatuses = new Array<AdventStatusDto>();
-    this.adventService = adventService;
+    this._adventClient = adventClient;
   }
 
   public year: number;
   public adventStatuses: AdventStatusDto[];
   public loading: boolean;
-  protected adventService: AdventOfCodeService;
+  protected _adventClient: AdventClient;
 
   ngOnInit() {
     this.getStatusesForYear(this.year);
@@ -26,7 +27,7 @@ export class DayBlockBaseComponent  {
 
   getStatusesForYear(year: number) {
     this.loading = true;
-    this.adventService.getAdventStatusForYear(year)
+    this._adventClient.get(year)
       .subscribe((statuses: AdventStatusDto[]) => {
         this.adventStatuses = statuses;
         this.loading = false;

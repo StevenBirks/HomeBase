@@ -26,6 +26,7 @@ namespace Api
         {
             services.AddCors();
             services.AddMvc();
+            services.AddSwaggerDocument();
                     //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
                     
             services.AddScoped<IAdventQueries, AdventQueries>();
@@ -47,6 +48,10 @@ namespace Api
             );
 
             app.UseMvc();
+
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

@@ -9,6 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BreadcrumbsModule } from 'ng6-breadcrumbs';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { AngularMaterialModule } from './shared/angular-material/angular-material.module';
+import { environment } from '../environments/environment';
+import { API_BASE_URL } from '../generated/web.api';
+
+export function getBaseUrl(): string {
+  return environment.apiUrl;
+}
 
 @NgModule({
   declarations: [
@@ -25,7 +31,10 @@ import { AngularMaterialModule } from './shared/angular-material/angular-materia
     BreadcrumbsModule,
     AngularMaterialModule
   ],
-  providers: [],
+  providers: [
+     {provide: API_BASE_URL, useFactory: getBaseUrl }
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
