@@ -136,6 +136,10 @@ import { Day18_2018Component } from './2018/day18/day18.component';
 import { Day18_5_2018Component } from './2018/day18/day18-5.component';
 import { Day19_2018Component } from './2018/day19/day19.component';
 import { Day19_5_2018Component } from './2018/day19/day19-5.component';
+// 2019
+import { DayBlock_2019Component } from './2019/day-block/day-block.component';
+import { Day1_2019Component } from './2019/day1/day1.component';
+import { Day1_5_2019Component } from './2019/day1/day1-5.component';
 
 @NgModule({
   declarations: [
@@ -269,6 +273,10 @@ import { Day19_5_2018Component } from './2018/day19/day19-5.component';
     Lumber201818DisplayComponent,
     Day19_2018Component,
     Day19_5_2018Component,
+    // 2019
+    DayBlock_2019Component,
+    Day1_2019Component,
+    Day1_5_2019Component,
     ],
   imports: [
       CommonModule,
