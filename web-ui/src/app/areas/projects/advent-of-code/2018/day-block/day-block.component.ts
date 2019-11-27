@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AdventOfCodeService } from '../../advent-of-code.service';
+import { AdventClient } from '../../../../../../generated/web.api';
 import { DayBlockBaseComponent } from '../../day-block/day-block-base.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { DayBlockBaseComponent } from '../../day-block/day-block-base.component'
 
 export class DayBlock_2018Component extends DayBlockBaseComponent {
 
-  constructor(protected adventService: AdventOfCodeService) {
-    super(adventService, 2018);
+  constructor(protected adventClient: AdventClient) {
+    super(adventClient, 2018);
   }
 }
