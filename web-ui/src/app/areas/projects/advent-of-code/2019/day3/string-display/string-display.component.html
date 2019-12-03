@@ -1,0 +1,15 @@
+<div class="mat-typography container">
+  <div class="row">
+    <div class="water-board col">
+      <div *ngFor="let row of _matrix; trackBy: trackByFn">
+        <span ngClass>{{ row }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+ <div>Answer: {{ _answer }}</div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

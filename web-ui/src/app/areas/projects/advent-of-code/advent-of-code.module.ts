@@ -142,6 +142,9 @@ import { Day1_2019Component } from './2019/day1/day1.component';
 import { Day1_5_2019Component } from './2019/day1/day1-5.component';
 import { Day2_2019Component } from './2019/day2/day2.component';
 import { Day2_5_2019Component } from './2019/day2/day2-5.component';
+import { Day3_2019Component } from './2019/day3/day3.component';
+import { Day3_5_2019Component } from './2019/day3/day3-5.component';
+import { StringDisplay201903Component } from './2019/day3/string-display/string-display.component';
 
 @NgModule({
   declarations: [
@@ -281,6 +284,9 @@ import { Day2_5_2019Component } from './2019/day2/day2-5.component';
     Day1_5_2019Component,
     Day2_2019Component,
     Day2_5_2019Component,
+    Day3_2019Component,
+    Day3_5_2019Component,
+    StringDisplay201903Component
     ],
   imports: [
       CommonModule,
@@ -299,7 +305,8 @@ import { Day2_5_2019Component } from './2019/day2/day2-5.component';
     AnswerDialogComponent,
     GameDisplayComponent,
     WaterDisplayComponent,
-    Lumber201818DisplayComponent
+    Lumber201818DisplayComponent,
+    StringDisplay201903Component
   ]
 })
 export class AdventOfCodeModule { }
