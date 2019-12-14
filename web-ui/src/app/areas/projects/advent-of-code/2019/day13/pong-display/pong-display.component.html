@@ -1,0 +1,20 @@
+<div class="mat-typography container">
+  <div class="row">
+    <div class="water-board col">
+      <div *ngFor="let row of _board; trackBy: trackByFn">
+        <span>{{ row }}</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>Score: {{ _score }}</div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions align="centre">
+  <button mat-button class="mat-accent mat-button" (click)="setLeft()">Left</button>
+  <button mat-button class="mat-accent mat-button" (click)="setNeutral()">Neutral</button>
+  <button mat-button class="mat-accent mat-button" (click)="setRight()">Right</button>
+</mat-dialog-actions>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
