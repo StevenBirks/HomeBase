@@ -162,6 +162,8 @@ import { Day12_5_2019Component } from './2019/day12/day12-5.component';
 import { Day13_2019Component } from './2019/day13/day13.component';
 import { Day13_5_2019Component } from './2019/day13/day13-5.component';
 import { Pong201913DisplayComponent } from './2019/day13/pong-display/pong-display.component';
+import { Day10_2019Component } from './2019/day10/day10.component';
+import { Day10_5_2019Component } from './2019/day10/day10-5.component';
 
 @NgModule({
   declarations: [
@@ -314,6 +316,8 @@ import { Pong201913DisplayComponent } from './2019/day13/pong-display/pong-displ
     Day7_5_2019Component,
     Day8_2019Component,
     Day9_2019Component,
+    Day10_2019Component,
+    Day10_5_2019Component,
     Day11_2019Component,
     Day11_5_2019Component,
     Day12_2019Component,

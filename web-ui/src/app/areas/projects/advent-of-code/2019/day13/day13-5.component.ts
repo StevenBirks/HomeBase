@@ -28,7 +28,6 @@ export class Day13_5_2019Component implements OnInit {
   private _pointerIncrement: number;
   private _updatePointer: boolean;
 
-  private _paused: boolean;
   private _stop: boolean;
 
   ngOnInit() {
@@ -42,8 +41,6 @@ export class Day13_5_2019Component implements OnInit {
 
     this.openDialog();
     this.calculateWithIntCodeComp();
-
-    this.answer = this._score;
   }
 
   private calculateWithIntCodeComp(): void {
@@ -81,8 +78,15 @@ export class Day13_5_2019Component implements OnInit {
     if (!this._stop) {
       window.setTimeout(() => {
         this.iterateGame();
-      }, this._go === 2 ? 5 : 0);
+      }, this._go === 2 ? 1 : 0);
+    } else {
+      this.setEnd();
     }
+  }
+
+  private setEnd() {
+    this.child.victory();
+    this.answer = this._score;
   }
 
   private drawBoard(paint: number[]) {
@@ -122,15 +126,10 @@ export class Day13_5_2019Component implements OnInit {
     dialogRef.componentInstance.setJoystick.subscribe((data: number) => {
       this._joystickInput = data;
     })
-
-    dialogRef.componentInstance.togglePause.subscribe(() => {
-      this._paused = !this._paused;
-    });
   }
 
   private initGame() {
     this._joystickInput = 0;
-    this._paused = false;
     this._board = new Array<Array<number>>();
     this._score = 0;
     this._go = 0;
