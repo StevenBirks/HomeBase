@@ -1,0 +1,22 @@
+<div class="mat-typography container">
+  <div class="row">
+    <div class="water-board col">
+      <div *ngFor="let row of _board; trackBy: trackByFn">
+        <span>{{ row }}</span>
+      </div>
+      <div>
+        <div>Minutes: {{ _minutes }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button class="mat-accent mat-button" (click)="up()">Up</button>
+  <button mat-button class="mat-accent mat-button" (click)="down()">Down</button>
+  <button mat-button class="mat-accent mat-button" (click)="left()">Left</button>
+  <button mat-button class="mat-accent mat-button" (click)="right()">Right</button>
+  <button mat-button class="mat-accent mat-button" (click)="iterateDroid()">IterateDroid</button>
+  <button mat-button class="mat-accent mat-button" (click)="prgressO2Iteration()">iterateO2</button>
+  <button mat-button class="mat-accent mat-button" (click)="stop()">stop</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
