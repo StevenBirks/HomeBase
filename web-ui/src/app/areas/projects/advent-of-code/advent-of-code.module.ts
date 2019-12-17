@@ -169,6 +169,8 @@ import { Day14_5_2019Component } from './2019/day14/day14-5.component';
 import { Day15_2019Component } from './2019/day15/day15.component';
 import { Day15_5_2019Component } from './2019/day15/day15-5.component';
 import { Droid201915DisplayComponent } from './2019/day15/Droid-display/droid-display.component';
+import { Day16_2019Component } from './2019/day16/day16.component';
+import { Day16_5_2019Component } from './2019/day16/day16-5.component';
 
 @NgModule({
   declarations: [
@@ -334,7 +336,9 @@ import { Droid201915DisplayComponent } from './2019/day15/Droid-display/droid-di
     Day14_5_2019Component,
     Day15_2019Component,
     Day15_5_2019Component,
-    Droid201915DisplayComponent
+    Droid201915DisplayComponent,
+    Day16_2019Component,
+    Day16_5_2019Component
     ],
   imports: [
       CommonModule,
