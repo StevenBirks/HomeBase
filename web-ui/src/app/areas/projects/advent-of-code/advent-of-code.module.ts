@@ -171,6 +171,9 @@ import { Day15_5_2019Component } from './2019/day15/day15-5.component';
 import { Droid201915DisplayComponent } from './2019/day15/Droid-display/droid-display.component';
 import { Day16_2019Component } from './2019/day16/day16.component';
 import { Day16_5_2019Component } from './2019/day16/day16-5.component';
+import { Day17_2019Component } from './2019/day17/day17.component';
+import { Day17_5_2019Component } from './2019/day17/day17-5.component';
+import { Scaffold201917DisplayComponent } from './2019/day17/Scaffold-display/Scaffold-display.component';
 
 @NgModule({
   declarations: [
@@ -338,7 +341,10 @@ import { Day16_5_2019Component } from './2019/day16/day16-5.component';
     Day15_5_2019Component,
     Droid201915DisplayComponent,
     Day16_2019Component,
-    Day16_5_2019Component
+    Day16_5_2019Component,
+    Day17_2019Component,
+    Day17_5_2019Component,
+    Scaffold201917DisplayComponent
     ],
   imports: [
       CommonModule,
@@ -360,7 +366,8 @@ import { Day16_5_2019Component } from './2019/day16/day16-5.component';
     Lumber201818DisplayComponent,
     StringDisplay201903Component,
     Pong201913DisplayComponent,
-    Droid201915DisplayComponent
+    Droid201915DisplayComponent,
+    Scaffold201917DisplayComponent
   ]
 })
 export class AdventOfCodeModule { }
