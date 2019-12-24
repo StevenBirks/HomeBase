@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-test2": {
+    "home-test": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-test2:build"
+            "browserTarget": "home-test:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-test2:build:production"
+              "browserTarget": "home-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-test2:build"
+            "browserTarget": "home-test:build"
           }
         },
         "test": {
@@ -97,7 +97,7 @@
         }
       }
     },
-    "angular-test2-e2e": {
+    "home-test-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -106,7 +106,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-test2:serve"
+            "devServerTarget": "home-test:serve"
           }
         },
         "lint": {
@@ -123,7 +123,7 @@
       }
     }
   },
-  "defaultProject": "angular-test2",
+  "defaultProject": "home-test",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
