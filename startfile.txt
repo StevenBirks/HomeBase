@@ -1,0 +1,6 @@
+>/BufferHeight 1000 powershell -new_console:s -NoExit -Command "$Host.UI.RawUI.WindowTitle = 'UI'; Set-Location ./web-ui; npm start"
+/BufferHeight 1000 powershell -new_console:s -NoExit -Command "$Host.UI.RawUI.WindowTitle = 'API'; Set-Location ./Api; dotnet watch run";
+
+
+
+
