@@ -174,6 +174,9 @@ import { Day16_5_2019Component } from './2019/day16/day16-5.component';
 import { Day17_2019Component } from './2019/day17/day17.component';
 import { Day17_5_2019Component } from './2019/day17/day17-5.component';
 import { Scaffold201917DisplayComponent } from './2019/day17/Scaffold-display/Scaffold-display.component';
+import { Day24_2019Component } from './2019/day24/day24.component';
+import { Day24_5_2019Component } from './2019/day24/day24-5.component';
+
 
 @NgModule({
   declarations: [
@@ -264,7 +267,7 @@ import { Scaffold201917DisplayComponent } from './2019/day17/Scaffold-display/Sc
     Day13_2015Component,
     Day14_5_2015Component,
     Day14_2015Component,
-    //2018
+    // 2018
     DayBlock_2018Component,
     Day1_2018Component,
     Day1_5_2018Component,
@@ -344,7 +347,9 @@ import { Scaffold201917DisplayComponent } from './2019/day17/Scaffold-display/Sc
     Day16_5_2019Component,
     Day17_2019Component,
     Day17_5_2019Component,
-    Scaffold201917DisplayComponent
+    Scaffold201917DisplayComponent,
+    Day24_2019Component,
+    Day24_5_2019Component
     ],
   imports: [
       CommonModule,
