@@ -61,7 +61,6 @@ export class Day24_5_2019Component {
     this._iterations++;
     const gridLength = this._grid.length;
 
-    console.log("gridlength: ", gridLength);
     for (let z = 0; z < gridLength + 2; z++) {
       const outer = this.getOuterLayer(this._grid[z], tempGrid);
       const inner = this.getInnerLayer(this._grid[z], tempGrid);
@@ -72,7 +71,7 @@ export class Day24_5_2019Component {
         // -x
         if (this._grid[z].cells[c].x === 0) {
           const outerCell = outer.cells.find((cell) => {
-            return cell.x === 4 && cell.y === 2;
+            return cell.x === 1 && cell.y === 2;
           });
 
           if (outerCell.value === '#') {
@@ -102,7 +101,7 @@ export class Day24_5_2019Component {
         // +x
         if (this._grid[z].cells[c].x === 4) {
           const outerCell = outer.cells.find((cell) => {
-            return cell.x === 0 && cell.y === 2;
+            return cell.x === 3 && cell.y === 2;
           });
 
           if (outerCell.value === '#') {
@@ -132,7 +131,7 @@ export class Day24_5_2019Component {
         // -y
         if (this._grid[z].cells[c].y === 0) {
           const outerCell = outer.cells.find((cell) => {
-            return cell.x === 2 && cell.y === 4;
+            return cell.x === 2 && cell.y === 1;
           });
 
           if (outerCell.value === '#') {
@@ -162,7 +161,7 @@ export class Day24_5_2019Component {
         // +y
         if (this._grid[z].cells[c].y === 4) {
           const outerCell = outer.cells.find((cell) => {
-            return cell.x === 2 && cell.y === 0;
+            return cell.x === 2 && cell.y === 3;
           });
 
           if (outerCell.value === '#') {
@@ -199,8 +198,7 @@ export class Day24_5_2019Component {
 
     this._grid = tempGrid;
 
-    console.log(this._iterations);
-    if (this._iterations < 10) {
+    if (this._iterations < 200) {
       window.setTimeout(() => {
         this.iterate();
       }, 1);
@@ -210,7 +208,6 @@ export class Day24_5_2019Component {
   }
 
   private getOuterLayer(inner: iGridLayer, tempGrid: iGridLayer[]): iGridLayer {
-    debugger;
     let existingLayer = this._grid.find((layer) => {
       return layer.contains === inner.id;
     });
@@ -257,9 +254,10 @@ export class Day24_5_2019Component {
       }
     }
 
-    //////////not fully updating the contained within and contains flags
-
     innerGridLayer.containedWithin = newGridLayer.id;
+    tempGrid.find((o) => {
+      return o.id === innerGridLayer.id;
+    }).containedWithin = newGridLayer.id;
 
     this._grid.push(newGridLayer);
     tempGrid.push(JSON.parse(JSON.stringify(newGridLayer)));
@@ -284,6 +282,10 @@ export class Day24_5_2019Component {
     }
 
     gridLayer.contains = newGridLayer.id;
+
+    tempGrid.find((o) => {
+      return o.id === gridLayer.id;
+    }).contains = newGridLayer.id;
 
     this._grid.push(newGridLayer);
     tempGrid.push(JSON.parse(JSON.stringify(newGridLayer)));
